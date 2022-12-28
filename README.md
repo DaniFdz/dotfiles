@@ -1,0 +1,2 @@
+# dotfiles
+Ubuntu bspwm configuration
