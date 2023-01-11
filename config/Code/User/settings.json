@@ -1,0 +1,55 @@
+{
+    "workbench.colorTheme": "Tokyo Night AltSynt",
+    "editor.fontSize": 15,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "workbench.tips.enabled": false,
+    "python.linting.flake8CategorySeverity.E": "Hint",
+    "python.linting.flake8CategorySeverity.F": "Hint",
+    "python.linting.mypyCategorySeverity.error": "Hint",
+    "python.linting.pycodestyleCategorySeverity.E": "Hint",
+    "python.linting.pylintCategorySeverity.error": "Hint",
+    "python.linting.pylintCategorySeverity.fatal": "Hint",
+    "editor.renderLineHighlight": "none",
+    "editor.matchBrackets": "near",
+    "editor.occurrencesHighlight": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on",
+    "workbench.sideBar.location": "left",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "liveshare.connectionMode": "relay",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true,
+        "sql": true
+    },
+    "markdown.preview.fontFamily": "Iosevka Term",
+    "editor.fontFamily": "'Hack Nerd Font'",
+    "terminal.integrated.fontFamily": "'Hack Nerd Font'",
+    "editor.fontLigatures": true,
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-x>": false,
+        "<C-j>": false,
+        "<C-a>": false,
+        "<C-z>": false,
+        "<C-y>": false,
+        "<C-f>": false,
+        "<C-k>": false,
+        "<C-t>": false,
+    },
+
+}
