@@ -1,2 +1,2 @@
-# dotfiles
+# bspwm dotfiles
 Ubuntu bspwm configuration
