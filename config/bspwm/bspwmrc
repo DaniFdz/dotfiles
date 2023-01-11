@@ -1,5 +1,6 @@
 #! /bin/sh
 
+pkill -f polybar
 sxhkd &
 polybar &
 
@@ -28,12 +29,12 @@ bspc rule -a kitty desktop='^1' follow=on focus=on
 bspc rule -a Chromium desktop='^2' follow=on focus=on
 bspc rule -a code desktop='^3' follow=on focus=on
 
-feh --no-fehbg --bg-scale $HOME/Pictures/wallpaper.png
+feh --no-fehbg --bg-scale --recursive --randomize $HOME/.wallpapers/
 picom --config $HOME/.config/picom/picom.conf &
 
-bspc config normal_border_color "#414868"
+bspc config normal_border_color "#1A1B26"
 bspc config active_border_color "#f7768e"
-bspc config focused_border_color "#1A1B26"
+bspc config focused_border_color "#414868"
 bspc config presel_border_color "#73daca"
 
 bspc config focus_follows_pointer true

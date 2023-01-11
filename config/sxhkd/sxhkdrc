@@ -150,3 +150,6 @@ super + shift + r
 
 super + l
   pkill -f user
+
+{_,shift + ,super + }XF86MonBrightness{Down,Up}
+    bright {-1,-10,min,+1,+10,max}
