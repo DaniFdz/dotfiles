@@ -7,14 +7,20 @@
 BATTERY_INFO=($( acpi | awk -F',' '{ print $0 }'))
 
 # Formatting helpers
-CHARGE=$((${BATTERY_INFO[3]//%,}))
+CHARGE=""
 ICON=""
 FORMAT=""
 
 # Format battery icon, depending on the status.
 if [[ "${BATTERY_INFO[2]}" == *"Charging"* ]]; then
+    CHARGE=$((${BATTERY_INFO[3]//%,}))
     ICON="  " # Plug icon, font awesome.
+elif [[ "${BATTERY_INFO[2]}" == *"Unknown"* ]]; then
+    CHARGE=$((${BATTERY_INFO[3]//%}))
+    ICON="  " # Plug icon, font awesome.
+
 else
+    CHARGE=$((${BATTERY_INFO[3]//%,}))
     ICON="  " # Car Battery icon, font awesome
 fi
 
@@ -30,9 +36,12 @@ elif [[ $CHARGE -lt 60 ]]; then
 elif [[ $CHARGE -lt 100 ]]; then
     # Green-ish
     FORMAT="%{B#282A36}%{F#6FB379}  "
+elif [[ $CHARGE -eq 100 ]]; then
+    ICON=""
+    FORMAT="%{B#282A36}%{F#6FB379}  "
 fi
 
-# Format charge & color depending on the status.
+# Format charge & color depending on the status.BATTERY_INFO[3]
 FORMAT="$FORMAT$ICON $CHARGE %{B- F-}"
 
 # Final formatted output.
