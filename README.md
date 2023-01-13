@@ -3,7 +3,7 @@ My own Ubuntu bspwm configuration
 
 ## Installation
 ### Clone the repository 
-Make sure to have git installed
+Make sure to have git and google chrome installed, or if you want another navigator,
 ```bash
 cd ~/Downloads
 git clone https://github.com/DaniFdz/dotfiles.git
@@ -15,10 +15,11 @@ Install the above dependencies
 sudo apt install zsh bspwm kitty neofetch picom rofi acpi bat feh
 sudo snap install code --classic
 sudo snap install nvim --classic
-sudo snap install lsd
 ```
 
 Download and compile [polybar](https://github.com/polybar/polybar/wiki/Compiling) from source
+
+Download and compile [lsd](https://github.com/Peltoche/lsd) from source
 
 ### Copy configuration files
 ```bash
