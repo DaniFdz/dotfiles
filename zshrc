@@ -223,7 +223,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias l='lsd --group-dirs=first'
     alias lla='lsd -lha --group-dirs=first'
     alias ls='lsd --group-dirs=first'
-    alias cat='batcat'
+    alias cat='batcat -P'
+    alias catl='batcat'
+    alias catn='/bin/cat'
 
     alias nano='nano -x -O'
     alias dirsearch='sudo dirsearch'
@@ -246,11 +248,6 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
 
 # Funciones
 
@@ -340,3 +337,25 @@ setxkbmap es
 export EDITOR=/snap/bin/nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Aliases
+alias get-my-ip="echo $(ifconfig | grep 'inet ' | awk '{print $2}' | grep -v '127.0.0.1')"
+alias cc="xclip -sel clip"
+alias my-ip="get-my-ip && get-my-ip | cc"
+alias pwd="pwd && pwd | cc"
+alias install="sudo apt install"
+alias uninstall="sudo apt remove"
+alias python="python3"
+alias py="python3"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias cd..="cd .."
+alias pdw="pwd"
+alias e="exit"
+alias c="clear"
+alias vim="nvim"
+alias vi="nvim"
+alias naut="nautilus"
+alias tests="cd $HOME/Documents/tests/"
