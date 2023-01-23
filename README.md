@@ -27,7 +27,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 ```
 
-### Copy configuration files
+### Configuration files
 ```bash
 mkdir ~/.config
 cp -r ./wallpapers ~/.wallpapers
@@ -37,7 +37,7 @@ cp ../zshrc ~/.zshrc
 echo -e '#!/bin/bash\npicom -f &\nexec bspwm' > ~/.xinitrc
 ```
 
-### Make zsh the default shell
-````bash
+Make zsh the default shell
+```bash
 chsh -s $(which zsh)
 ```
