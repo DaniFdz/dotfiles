@@ -12,7 +12,7 @@ cd dotfiles
 ### Install the dependencies
 Install the above dependencies
 ```bash
-sudo apt install zsh bspwm kitty neofetch picom rofi acpi bat feh
+sudo apt install zsh bspwm kitty neofetch picom rofi acpi bat feh net-tools x11-xkb-utils
 sudo snap install code --classic
 sudo snap install nvim --classic
 ```
@@ -20,6 +20,12 @@ sudo snap install nvim --classic
 Download and compile [polybar](https://github.com/polybar/polybar/wiki/Compiling) from source
 
 Download and compile [lsd](https://github.com/Peltoche/lsd) from source
+
+Download p10k
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
 
 ### Copy configuration files
 ```bash
