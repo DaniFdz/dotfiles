@@ -1,4 +1,4 @@
-# bspwm dotfiles
+# BSPWM and polybar dotfiles
 My own Ubuntu bspwm configuration
 
 ## Installation
@@ -29,4 +29,9 @@ cd config
 cp -r bspwm/ kitty/ neofetch/ picom/ polybar/ rofi/ sxhkd/ ~/.config
 cp ../zshrc ~/.zshrc
 echo -e '#!/bin/bash\npicom -f &\nexec bspwm' > ~/.xinitrc
+```
+
+### Make zsh the default shell
+````bash
+chsh -s $(which zsh)
 ```
