@@ -22,8 +22,13 @@ Download and compile [polybar](https://github.com/polybar/polybar/wiki/Compiling
 Download and compile [lsd](https://github.com/Peltoche/lsd) from source
 
 ```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+
+Set zsh as default shell:
+```bash
+chsh -s $(which zsh)
 ```
 
 ### Configuration files
