@@ -8,6 +8,9 @@
 
   home.stateVersion = "22.11"; 
 
+  home.packages = with pkgs; [
+  ];
+
   home.file = {
   };
 
@@ -22,6 +25,8 @@
     userName = "DaniFdz";
     userEmail = "danifernandezzzzzz@gmail.com";
   };
+
+  programs.gh.enable = true;
   
   gtk = {
     enable = true;
