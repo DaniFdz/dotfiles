@@ -23,6 +23,7 @@
         modules = [ 
 	  ./modules/home.nix
 	  ./modules/terminal.nix
+	  ./modules/kitty.nix
 	];
 
         # Optionally use extraSpecialArgs
