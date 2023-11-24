@@ -12,6 +12,12 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    extraPackages = with pkgs; [
+      lua-language-server
+      rnix-lsp
+      wl-clipboard
+    ];
+
     plugins = with pkgs.vimPlugins; [
       # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
 
@@ -41,14 +47,7 @@
       }
 
       {
-        plugin = (nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-        ]));
+        plugin = nvim-treesitter.withAllGrammars;
         config = toLuaFile ./nvim/plugins/treesitter.lua;
       }
 
