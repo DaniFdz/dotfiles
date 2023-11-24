@@ -5,14 +5,24 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than-1w";
+  };
+
+  networking.hostName = "dani"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -20,7 +30,10 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
@@ -40,21 +53,18 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
+  # Enable the X11 windowing system
   services.xserver = {
-    layout = "es";
-    xkbVariant = "";
+    xkbVariant = "es";
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    windowManager.awesome.enable = true;
   };
 
-  # Configure console keymap
-  console.keyMap = "es";
+  console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -79,12 +89,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  environment.shells = [ pkgs.zsh ];
   programs.zsh.enable = true;
 
   users.users.dani = {
     isNormalUser = true;
     description = "dani";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
@@ -98,26 +109,22 @@
     wget
     curl
     discord
+    pavucontrol
+    pulseaudio
   ];
 
-  # List services that you want to enable:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-  # Enable VMware tools
-  virtualisation.vmware.guest.enable = true;
+  virtualisation = {
+    # Enable VMware tools
+    vmware.guest.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  system.stateVersion = "23.05"; # Did you read the comment?
-
-  # Hyprland settings
-  hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
+    docker.enable = true;
   };
+
+  programs.dconf.enable = true;
+
+  services.auto-cpufreq.enable = true;
+  
+  system.stateVersion = "23.05";
 }

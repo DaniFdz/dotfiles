@@ -12,15 +12,14 @@
 
 ---
 
-To install just add this line to `/etc/nixos/configuration-nix`:
+Enable flakes
 ```nix
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
 
-And then type:
+Clone dotfiles
 ```
-sudo nixos-rebuild switch
-
-git clone https://github.com/DaniFdz/dotfiles.git && cd dotfiles
-home-manager switch --flake .
+nix-shell -p git
+git clone https://github.com/DaniFdz/dotfiles.git
+cd dotfiles
 ```
