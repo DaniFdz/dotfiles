@@ -3,10 +3,8 @@
 {
   home.packages = with pkgs; [
     zsh
-    bat
     lsd
     xclip
-    neovim
   ];
   
   programs.zsh = {
@@ -19,9 +17,9 @@
       l = "lsd --group-dirs=first";
       lla = "lsd -lha --group-dirs=first";
       ls = "lsd --group-dirs=first";
-      cat = "bat -P";
-      catl = "bat";
-      catn = "/bin/cat";
+      cat = "bat -P --theme=Dracula";
+      catl = "bat --theme=Dracula";
+      catn = "/run/current-system/sw/bin/cat";
       get-my-ip = "echo (ifconfig | grep 'inet ' | awk '{print 2}' | grep -v '127.0.0.1')";
       cc = "xclip -sel clip";
       my-ip = "get-my-ip && get-my-ip | cc";
@@ -73,6 +71,23 @@
     };
   };
 
-  programs.fzf.enable = true;
-  programs.fzf.enableZshIntegration = true;
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  
+  programs.bat = {
+    enable = true;
+    themes = {
+      dracula = {
+        src = pkgs.fetchFromGitHub {
+          owner = "dracula";
+          repo = "sublime"; # Bat uses sublime syntax for its themes
+          rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
+          sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
+        };
+        file = "Dracula.tmTheme";
+      };
+    };
+  };
 }
