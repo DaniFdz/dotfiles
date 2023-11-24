@@ -34,8 +34,14 @@
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugins/cmp.lua;
       }
+      
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./nvim/plugins/telescope.lua;
+      }
 
       nvim-web-devicons
+      neodev-nvim
 
       vim-nix
     ];
