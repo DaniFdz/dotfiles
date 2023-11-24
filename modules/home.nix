@@ -6,7 +6,8 @@
   
   imports = [
     ./kitty.nix
-    ./hyprland.nix
+    ./hyprland/hyprland.nix
+    ./waybar/waybar.nix
     ../common/terminal.nix
     ../common/nvim.nix
   ];

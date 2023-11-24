@@ -113,4 +113,12 @@
   # networking.firewall.enable = false;
 
   system.stateVersion = "23.05"; # Did you read the comment?
+
+  # Hyprland settings
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
+
+
 }

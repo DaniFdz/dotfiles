@@ -33,22 +33,22 @@
 
       {
         plugin = nvim-lspconfig;
-        config = toLuaFile ./nvim/plugins/lsp.lua;
+        config = toLuaFile ./plugins/lsp.lua;
       }
 
       {
         plugin = nvim-cmp;
-        config = toLuaFile ./nvim/plugins/cmp.lua;
+        config = toLuaFile ./plugins/cmp.lua;
       }
       
       {
         plugin = telescope-nvim;
-        config = toLuaFile ./nvim/plugins/telescope.lua;
+        config = toLuaFile ./plugins/telescope.lua;
       }
 
       {
         plugin = nvim-treesitter.withAllGrammars;
-        config = toLuaFile ./nvim/plugins/treesitter.lua;
+        config = toLuaFile ./plugins/treesitter.lua;
       }
 
       telescope-fzf-native-nvim
@@ -71,7 +71,7 @@
     ];
  
     extraLuaConfig = ''
-      ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./options.lua}
     '';
   };
 }
