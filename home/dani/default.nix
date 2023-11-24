@@ -3,12 +3,12 @@
 {
   imports = [
     inputs.hyprland.homeManagerModules.default
-    ../capabilites/git
-    ../capabilites/kitty
-    ../capabilites/firefox
-    ../capabilites/terminal
-    ../capabilites/nvim
-    ../capabilites/desktop
+    ../capabilities/git
+    ../capabilities/kitty
+    ../capabilities/firefox
+    ../capabilities/terminal
+    ../capabilities/nvim
+    ../capabilities/desktop
   ];
 
   fonts.fontconfig.enable = true;
