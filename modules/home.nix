@@ -15,6 +15,9 @@
   home.stateVersion = "22.11"; 
 
   home.packages = with pkgs; [
+    neovide
+    sxiv
+    mpv
   ];
 
   home.file = {
@@ -86,6 +89,14 @@
           url = "https://rycee.gitlab.io/home-manager/options.html";
         }
       ];
+    };
+  };
+
+  programs.zathura = {
+    enable = true;
+    options = {
+      default-bg = "#1a1b26";
+      default-fg = "#d5d6db";
     };
   };
 }
