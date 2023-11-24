@@ -8,10 +8,10 @@
       ${builtins.readFile ./style.css} 
     '';
 
-    settings = {
+    settings.mainBar = {
+      height = 10;
       layer = "top";
       position = "top";
-      height = 10;
       margin-bottom = 0;
       margin-top = 0;
 

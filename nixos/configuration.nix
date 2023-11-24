@@ -94,6 +94,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    file
     wget
     curl
     discord
@@ -119,6 +120,4 @@
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
-
-
 }

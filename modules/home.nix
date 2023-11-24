@@ -8,8 +8,9 @@
     ./kitty.nix
     ./hyprland/hyprland.nix
     ./waybar/waybar.nix
+    # ./dunst/dunst.nix
     ../common/terminal.nix
-    ../common/nvim.nix
+    ../common/nvim/nvim.nix
   ];
 
   # targets.genericLinux.enable = true; # ENABLE THIS ON NON NIXOS
@@ -17,9 +18,11 @@
   home.stateVersion = "22.11"; 
 
   home.packages = with pkgs; [
-    neovide
-    sxiv
     mpv
+    sxiv
+    swww
+    neovide
+    rofi-wayland
   ];
 
   home.file = {
