@@ -12,28 +12,33 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-		plugins = with pkgs.vimPlugins; [
-		  # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
-
-			{
-				plugin = dracula-nvim;
-				config = "colorscheme dracula";
-			}	
+    plugins = with pkgs.vimPlugins; [
+      # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
 
       {
-        plugin = nvim-lspconfig;
-        config = toLuaFile ./nvim/plugin/lsp.lua;
-      }
+        plugin = tokyonight-nvim;
+        config = "colorscheme tokyonight-moon";
+      }	
 
-			{
+      {
         plugin = comment-nvim;
         config = toLua "require(\"Comment\").setup()";
       }
 
-			nvim-web-devicons
+      {
+        plugin = nvim-lspconfig;
+        config = toLuaFile ./nvim/plugins/lsp.lua;
+      }
 
-			vim-nix
-		];
+      {
+        plugin = nvim-cmp;
+        config = toLuaFile ./nvim/plugins/cmp.lua;
+      }
+
+      nvim-web-devicons
+
+      vim-nix
+    ];
  
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/options.lua}
