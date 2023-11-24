@@ -43,11 +43,11 @@
         # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system  
         dani = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; }; # pass custom arguments into sub module.
+          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
             ./hosts/dani
             { programs.hyprland.enable = true; }
-            home-manager.nixoxModules.home-manager
+            home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
