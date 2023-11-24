@@ -3,6 +3,12 @@
 {
   home.username = "dani";
   home.homeDirectory = "/home/dani";
+  
+  imports = [
+    ./kitty.nix
+    ../common/terminal.nix
+    ../common/nvim.nix
+  ];
 
   # targets.genericLinux.enable = true; # ENABLE THIS ON NON NIXOS
 
