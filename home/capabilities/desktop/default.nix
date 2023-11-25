@@ -51,6 +51,10 @@
     style.name = "adwaita-gtk";
   };
 
-  # home.sessionVariables.GTK_THEME = "Catppuccin-Frappe-Standard-Blue-light";
-  home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+  home.sessionVariables = {
+    GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+    NIXOS_OZONE_WL = "1";
+    # If cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 }
