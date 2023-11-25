@@ -48,13 +48,9 @@
         config = toLuaFile ./plugins/telescope.lua;
       }
       {
-        plugin = nvim-tree-lua;
-        config = toLuaFile ./plugins/nvimtree.lua;
+        plugin = nerdtree;
+        config = toLuaFile ./plugins/nerdtree.lua;
       }
-      # {
-      #   plugin = nerdtree;
-      #   config = toLuaFile ./plugins/nerdtree.lua;
-      # }
       {
         plugin = cmp-copilot;
         config = toLuaFile ./plugins/copilot.lua;
@@ -67,10 +63,11 @@
       cmp_luasnip
       cmp-nvim-lsp
       luasnip
-      friendly-snippets
       lualine-nvim
-      nvim-web-devicons
       neodev-nvim
+      nerdtree-git-plugin
+      vim-nerdtree-syntax-highlight
+      vim-devicons
       vim-nix
       {
         plugin = nvim-treesitter.withAllGrammars;
