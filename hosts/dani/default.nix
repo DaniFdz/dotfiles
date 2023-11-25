@@ -9,9 +9,6 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -55,7 +52,8 @@
 
   # Enable the X11 windowing system
   services.xserver = {
-    xkbVariant = "es";
+    layout = "es";
+    xkbVariant = "";
     enable = true;
     displayManager.gdm = {
       enable = true;
@@ -123,7 +121,5 @@
 
   programs.dconf.enable = true;
 
-  services.auto-cpufreq.enable = true;
-  
   system.stateVersion = "23.05";
 }

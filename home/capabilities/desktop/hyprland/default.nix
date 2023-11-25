@@ -18,8 +18,8 @@
     wofi-emoji
   ];
 
-  xdg.dataFile."wallpaper/1e1c31.png".source = ../1e1c31.png;
-  xdg.dataFile."wallpaper/light.png".source = ../light.JPG;
+  xdg.dataFile."wallpaper/1e1c31.png".source = ../wallpapers/tokyo-night01.png;
+  xdg.dataFile."wallpaper/light.png".source = ../wallpapers/tokyo-night02.png;
 
   programs.wofi.enable = true;
 
