@@ -14,6 +14,7 @@
 
     extraPackages = with pkgs; [
       rnix-lsp
+      rust-analyzer
       luajitPackages.lua-lsp
     ];
 
@@ -58,6 +59,10 @@
       {
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
+      }
+      {
+        plugin = rust-tools-nvim;
+        config = toLuaFile ./plugins/rust-tools.lua;
       }
       telescope-fzf-native-nvim
       cmp_luasnip
