@@ -45,6 +45,11 @@
         plugin = telescope-nvim;
         config = toLuaFile ./plugins/telescope.lua;
       }
+      
+      {
+        plugin = nerdtree;
+        config = toLuaFile ./plugins/nerdtree.lua;
+      }
 
       {
         plugin = nvim-treesitter.withAllGrammars;
