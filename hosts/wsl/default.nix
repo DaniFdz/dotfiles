@@ -20,6 +20,7 @@
       extraGroups = [ "wheel" "docker" ];
       shell = pkgs.zsh;
     };
+    programs.zsh.enable = true;
 
     virtualisation.docker.enable = true;
 
@@ -31,7 +32,7 @@
 
     environment.systemPackages = with pkgs; [
       git
-      zsh
+      wget
       neovim
     ];
 
