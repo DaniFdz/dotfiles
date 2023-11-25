@@ -41,18 +41,18 @@
         # However, the configuration name can also be specified using `sudo nixos-rebuild switch --flake /path/to/flakes/directory#<name>`.
         # The `nixpkgs.lib.nixosSystem` function is used to build this configuration, the following attribute set is its parameter.
         # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system  
-        dani = nixpkgs.lib.nixosSystem {
+        gnome = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
-            ./hosts/dani
+            ./hosts/gnome
             { programs.hyprland.enable = true; }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.dani = import ./home/dani;
+              home-manager.users.dani = import ./home/gnome;
             }
           ];
         };

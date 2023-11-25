@@ -57,9 +57,10 @@
     enable = true;
     displayManager.gdm = {
       enable = true;
-      wayland = true;
+      # wayland = true;
     };
-    windowManager.awesome.enable = true;
+    # windowManager.awesome.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   console.useXkbConfig = true;
