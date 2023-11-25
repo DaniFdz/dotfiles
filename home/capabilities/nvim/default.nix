@@ -48,9 +48,13 @@
         config = toLuaFile ./plugins/telescope.lua;
       }
       {
-        plugin = nerdtree;
-        config = toLuaFile ./plugins/nerdtree.lua;
+        plugin = nvim-tree-lua;
+        config = toLuaFile ./plugins/nvimtree.lua;
       }
+      # {
+      #   plugin = nerdtree;
+      #   config = toLuaFile ./plugins/nerdtree.lua;
+      # }
       {
         plugin = cmp-copilot;
         config = toLuaFile ./plugins/copilot.lua;
