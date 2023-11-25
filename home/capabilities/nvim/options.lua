@@ -1,6 +1,3 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 vim.o.clipboard = 'unnamedplus'
 
 vim.o.number = true
