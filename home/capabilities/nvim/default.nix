@@ -51,6 +51,10 @@
         plugin = nvim-treesitter.withAllGrammars;
         config = toLuaFile ./plugins/treesitter.lua;
       }
+      {
+        plugin = cmp-copilot;
+        config = toLuaFile ./plugins/copilot.lua;
+      }
       telescope-fzf-native-nvim
       cmp_luasnip
       cmp-nvim-lsp
