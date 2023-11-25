@@ -42,13 +42,27 @@
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
             ./hosts/gnome
-            { programs.hyprland.enable = true; }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.dani = import ./home/gnome;
+            }
+          ];
+        };
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            { nix.registry.nixpkgs.flake = nixpkgs; }
+            ./hosts/wsl
+            NixOS-WSL.nixosModules.wsl
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.dani = import ./home/wsl;
             }
           ];
         };
