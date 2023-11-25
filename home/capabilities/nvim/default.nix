@@ -23,10 +23,14 @@
 
     plugins = with pkgs.vimPlugins; [
       # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
+      # {
+      #   plugin = tokyonight-nvim;
+      #   config = "colorscheme tokyonight-moon";
+      # }	
       {
-        plugin = tokyonight-nvim;
-        config = "colorscheme tokyonight-moon";
-      }	
+        plugin = catppuccin-nvim;
+        config = toLuaFile ./plugins/catppuccin.lua;
+      }
       {
         plugin = comment-nvim;
         config = toLua "require(\"Comment\").setup()";
