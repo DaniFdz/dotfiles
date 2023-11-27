@@ -12,19 +12,7 @@
 
 ---
 
-Enable flakes
-```nix
-export NIX_CONFIG="experimental-features = nix-command flakes"
-```
-
-Clone dotfiles
-```bash
-nix-shell -p git
-git clone https://github.com/DaniFdz/dotfiles.git
-cd dotfiles
-```
-
 Rebuild system with specific configurations
 ```bash
-sudo nixos-rebuild switch --flake .#gnome
+sudo nixos-rebuild switch --flake github:DaniFdz/dotfiles#gnome
 ```
