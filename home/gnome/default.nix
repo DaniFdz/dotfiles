@@ -5,6 +5,7 @@
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
     ../capabilities/alacritty
+    ../capabilities/kitty
     ../capabilities/firefox
     ../capabilities/terminal
     ../capabilities/nvim
@@ -12,6 +13,10 @@
   ];
 
   fonts.fontconfig.enable = true;
+
+
+  programs.fzf.enable = true;
+  programs.fzf.enableZshIntegration = true;
 
   home = {
     username = "dani";
@@ -21,6 +26,7 @@
     packages = with pkgs; [
       mpv
       docker-compose
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
 
@@ -28,7 +34,7 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       # gtk-theme = "Catppuccin-Frappe-Standard-Blue-light";
-      gtk-theme = "Catppuccin-Mocha-Standard-Blue-Dark";
+      gtk-theme = "Catppuccin-Macchiato-Compact-Pink-Dark";
       cursor-theme = "Bibata-Modern-Ice";
       icon-theme = "Fluent-dark";
     };
@@ -37,13 +43,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
-      # name = "Catppuccin-Frappe-Standard-Blue-light";
+      name = "Catppuccin-Macchiato-Compact-Pink-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
-        size = "standard"; # compact
-        tweaks = [];
-        variant = "mocha";
+        accents = [ "pink" ];
+        size = "compact";
+        tweaks = [ "rimless" "black" ];
+        variant = "macchiato";
       };
     };
 
@@ -65,9 +70,9 @@
   };
 
   home.sessionVariables = {
-    GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+    GTK_THEME = "Catppuccin-Macchiato-Compact-Pink-Dark";
     # If cursor becomes invisible
-    # WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   programs.home-manager.enable = true;
