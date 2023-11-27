@@ -8,6 +8,7 @@
     ../capabilities/firefox
     ../capabilities/terminal
     ../capabilities/nvim
+    ../capabilities/tmux
   ];
 
   fonts.fontconfig.enable = true;
