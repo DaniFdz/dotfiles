@@ -180,6 +180,11 @@
         mods = "Alt";
         action = "ToggleFullScreen";
       }
+      {
+        key = "Back";
+        mods = "Control";
+        chars = "\x1b\x7f";
+      }
     ];
   };
 }
