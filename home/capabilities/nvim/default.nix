@@ -63,6 +63,8 @@
         plugin = rust-tools-nvim;
         config = toLuaFile ./plugins/rust-tools.lua;
       }
+      vim-tmux-navigator
+
       telescope-fzf-native-nvim
       cmp_luasnip
       cmp-nvim-lsp
