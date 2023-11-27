@@ -14,7 +14,6 @@
 
     extraPackages = with pkgs; [
       rnix-lsp
-      rust-analyzer
       luajitPackages.lua-lsp
     ];
 

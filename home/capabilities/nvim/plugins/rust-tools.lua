@@ -1,5 +1,8 @@
 local rt = require("rust-tools")
 
+vim.g.leader = ","
+vim.g.mapleader = ","
+
 rt.setup({
   server = {
     on_attach = function(_, bufnr)
