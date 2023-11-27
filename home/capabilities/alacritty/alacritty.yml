@@ -9,16 +9,16 @@ working_directory: ~
 
 font:
   normal:
-    family: "Fira code"
+    family: "FiraCode Nerd Font"
     style: Medium
   bold:
-    family: "Fira code"
+    family: "FiraCode Nerd Font"
     style: Bold
   italic:
-    family: "Fira code"
+    family: "FiraCode Nerd Font"
     style: Italic
   bold_italic:
-    family: "Fira code"
+    family: "FiraCode Nerd Font"
     style: Bold Italic
   size: 10.0
 

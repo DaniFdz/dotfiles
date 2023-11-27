@@ -10,7 +10,7 @@
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
 
-  home.file."alacritty".source = ./alacritty.yml;
+  home.file.".config/alacritty/alacritty.yml".source = ./alacritty.yml;
 
   programs.alacritty = {
     enable = true;
