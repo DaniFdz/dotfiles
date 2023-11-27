@@ -4,7 +4,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
-    ../capabilities/kitty
+    ../capabilities/alacritty
     ../capabilities/firefox
     ../capabilities/terminal
     ../capabilities/nvim
