@@ -1,7 +1,7 @@
 local rt = require("rust-tools")
 
-vim.g.leader = ","
-vim.g.mapleader = ","
+vim.g.leader = " "
+vim.g.mapleader = " "
 
 rt.setup({
   server = {

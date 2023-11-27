@@ -23,18 +23,20 @@
 
     plugins = with pkgs.vimPlugins; [
       # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
-      # {
-      #   plugin = tokyonight-nvim;
-      #   config = "colorscheme tokyonight-moon";
-      # }	
       {
         plugin = catppuccin-nvim;
         config = toLuaFile ./plugins/catppuccin.lua;
       }
+
       {
         plugin = comment-nvim;
         config = toLua "require(\"Comment\").setup()";
       }
+
+      nerdtree-git-plugin
+      vim-nerdtree-syntax-highlight
+      vim-devicons
+
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./plugins/lsp.lua;
@@ -43,42 +45,32 @@
         plugin = nvim-cmp;
         config = toLuaFile ./plugins/cmp.lua;
       }
-      {
-        plugin = telescope-nvim;
-        config = toLuaFile ./plugins/telescope.lua;
-      }
+      luasnip
+      neodev-nvim
+      cmp_luasnip
+      cmp-nvim-lsp
+
       {
         plugin = nerdtree;
         config = toLuaFile ./plugins/nerdtree.lua;
       }
+
       {
         plugin = cmp-copilot;
         config = toLuaFile ./plugins/copilot.lua;
       }
+
       {
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
       }
+
       {
         plugin = rust-tools-nvim;
         config = toLuaFile ./plugins/rust-tools.lua;
       }
-      vim-tmux-navigator
 
-      telescope-fzf-native-nvim
-      cmp_luasnip
-      cmp-nvim-lsp
-      luasnip
-      lualine-nvim
-      neodev-nvim
-      nerdtree-git-plugin
-      vim-nerdtree-syntax-highlight
-      vim-devicons
-      vim-nix
-      {
-        plugin = nvim-treesitter.withAllGrammars;
-        config = toLuaFile ./plugins/treesitter.lua;
-      }
+      vim-tmux-navigator
     ];
   };
 }
