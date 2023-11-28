@@ -12,7 +12,23 @@
 
 ---
 
+## For NixOS systems
+Enable flakes
+```bash
+export NIX_CONFIG="experimental-features = nix-command flakes"
+```
 Rebuild system with specific configurations
 ```bash
 sudo nixos-rebuild switch --flake github:DaniFdz/dotfiles#gnome
+```
+
+## For non NixOS systems
+Download NixOS
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+To build the system, open a new terminal and type
+```bash
+nix --experimental-features 'nix-command flakes' build -L github:DaniFdz/dotfiles#nixosConfigurations.gnome.config.system.build.toplevel
 ```
