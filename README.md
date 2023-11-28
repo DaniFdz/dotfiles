@@ -13,22 +13,31 @@
 ---
 
 ## For NixOS systems
-Enable flakes
+Enable flakes:
 ```bash
 export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
-Rebuild system with specific configurations
+Rebuild system with specific configurations:
 ```bash
 sudo nixos-rebuild switch --flake github:DaniFdz/dotfiles#gnome
 ```
 
-## For non NixOS systems
-Download NixOS
-```bash
-sh <(curl -L https://nixos.org/nix/install) --daemon
+## For wsl NixOS
+First download the [latest release](https://github.com/nix-community/NixOS-WSL/releases/tag/23.5.5.2)
+
+Then open a terminal and run:
+```ps1
+wsl --import NixOS .\NixOS\ nixos-wsl.tar.gz --version 2
+wsl -d NixOS
 ```
 
-To build the system, open a new terminal and type
+After the initial installation, you need to update your channels once, to be able to use `nixos-rebuild`:
 ```bash
-nix --experimental-features 'nix-command flakes' build -L github:DaniFdz/dotfiles#nixosConfigurations.gnome.config.system.build.toplevel
+nix-channel --update
 ```
+
+To build the system type:
+```bash
+nixos-rebuild switch --flake github:DaniFdz/dotfiles#wsl
+```
+
