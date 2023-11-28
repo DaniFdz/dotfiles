@@ -12,6 +12,7 @@
     plugins = with pkgs.tmuxPlugins; [
       # List available plugins: nix-env -f '<nixpkgs>' -qaP -A tmuxPlugins
       vim-tmux-navigator
+			tmux-fzf
       {
         plugin = resurrect;
         extraConfig = "set -g @resurrect-capture-pane-contents 'on'";
