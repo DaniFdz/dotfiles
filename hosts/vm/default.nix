@@ -6,18 +6,14 @@
       ./hardware-configuration.nix
     ];
   # Bootloader.
-  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
-    devices = ["nodev"];
-    efiSupport = true;
+    device = "/dev/sda";
     useOSProber = true;
-    dedsec-theme = {
-      enable = true;
-      style = "redskull";
-      icon = "color";
-      resolution = "1080p";
-    };
+		minegrub-theme = {
+			enable = true;
+			splash = "100 Flakes!";
+		};
   };
 
   boot.plymouth = {

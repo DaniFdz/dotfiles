@@ -26,13 +26,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		dedsec-grub-theme = {
-			url = gitlab:VandalByte/dedsec-grub-theme;
-      inputs.nixpkgs.follows = "nixpkgs";
-		};
+		minegrub.url = "github:Lxtharia/minegrub-theme";
   };
 
-  outputs = { self, nixpkgs, home-manager, NixOS-WSL, dedsec-grub-theme, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:
     let
       inherit (self) outputs;
     in {
@@ -42,35 +39,37 @@
         # However, the configuration name can also be specified using `sudo nixos-rebuild switch --flake /path/to/flakes/directory#<name>`.
         # The `nixpkgs.lib.nixosSystem` function is used to build this configuration, the following attribute set is its parameter.
         # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system  
-        gnome = nixpkgs.lib.nixosSystem {
+        vm = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
-            ./hosts/default
-						dedsec-grub-theme.nixosModule
+            ./hosts/vm
+						inputs.hyprland.nixosModules.default
+						{ programs.hyprland.enable = true; }
+						inputs.minegrub.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.dani = import ./home/gnome;
+              home-manager.users.dani = import ./home/vm;
             }
           ];
         };
-        hypr = nixpkgs.lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
-            ./hosts/default
+            ./hosts/laptop
 						inputs.hyprland.nixosModules.default
 						{ programs.hyprland.enable = true; }
-            dedsec-grub-theme.nixosModule
+						inputs.minegrub.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.dani = import ./home/hypr;
+              home-manager.users.dani = import ./home/laptop;
             }
           ];
         };

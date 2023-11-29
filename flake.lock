@@ -22,26 +22,6 @@
         "type": "github"
       }
     },
-    "dedsec-grub-theme": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1662253348,
-        "narHash": "sha256-Cq/espQSpscC89oIuJGE4IP2p6zYpuzp88L6M38uayA=",
-        "owner": "VandalByte",
-        "repo": "dedsec-grub-theme",
-        "rev": "8ccb1beb831f459987522d58263b076827624119",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "VandalByte",
-        "repo": "dedsec-grub-theme",
-        "type": "gitlab"
-      }
-    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -181,6 +161,24 @@
         "type": "github"
       }
     },
+    "minegrub": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1696344261,
+        "narHash": "sha256-Yy3zQufiJ4NjcTbCPEhJ0+4yp1tmjAcApjrnZSDN23M=",
+        "owner": "Lxtharia",
+        "repo": "minegrub-theme",
+        "rev": "ef835b35115ff70b9a1be02a89660bf8b60b721a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Lxtharia",
+        "repo": "minegrub-theme",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1700612854,
@@ -199,6 +197,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1689850295,
+        "narHash": "sha256-fUYf6WdQlhd2H+3aR8jST5dhFH1d0eE22aes8fNIfyk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5df4d78d54f7a34e9ea1f84a22b4fd9baebc68d0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1700794826,
         "narHash": "sha256-RyJTnTNKhO0yqRpDISk03I/4A67/dp96YRxc86YOPgU=",
         "owner": "NixOS",
@@ -216,11 +230,11 @@
     "root": {
       "inputs": {
         "NixOS-WSL": "NixOS-WSL",
-        "dedsec-grub-theme": "dedsec-grub-theme",
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_2"
+        "minegrub": "minegrub",
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "systems": {

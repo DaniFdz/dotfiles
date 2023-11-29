@@ -71,8 +71,6 @@
 
   home.sessionVariables = {
     GTK_THEME = "Catppuccin-Macchiato-Compact-Pink-Dark";
-    # If cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
   };
 
   programs.home-manager.enable = true;
