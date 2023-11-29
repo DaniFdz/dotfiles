@@ -46,7 +46,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
-            ./hosts/gnome
+            ./hosts/default
 						dedsec-grub-theme.nixosModule
             home-manager.nixosModules.home-manager
             {
@@ -61,7 +61,9 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
-            ./hosts/hypr
+            ./hosts/default
+						inputs.hyprland.nixosModules.default
+						{ programs.hyprland.enable = true; }
             dedsec-grub-theme.nixosModule
             home-manager.nixosModules.home-manager
             {

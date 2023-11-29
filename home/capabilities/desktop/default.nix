@@ -3,6 +3,8 @@
 {
   imports = [
     ./hyprland
+		./waybar
+		./dunst
   ];
 
   home.packages = with pkgs; [ 
