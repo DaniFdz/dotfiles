@@ -6,7 +6,6 @@
     ../capabilities/git
     ../capabilities/alacritty
     ../capabilities/kitty
-    ../capabilities/firefox
     ../capabilities/terminal
     ../capabilities/nvim
     ../capabilities/tmux
@@ -26,6 +25,7 @@
     packages = with pkgs; [
       mpv
       docker-compose
+			brave
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
