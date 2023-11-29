@@ -5,12 +5,16 @@
     ./hyprland
 		./waybar
 		./dunst
+		./rofi
   ];
+
+	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
 
   home.packages = with pkgs; [ 
     webcord
     gnome.nautilus
     arandr
+		swww
   ];
 
   home.sessionVariables = {
