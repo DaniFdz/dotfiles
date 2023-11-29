@@ -5,7 +5,7 @@
     ./hyprland
 		./waybar
 		./dunst
-		./rofi
+		./wofi
   ];
 
 	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
