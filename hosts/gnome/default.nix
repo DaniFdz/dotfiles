@@ -6,9 +6,24 @@
       ./hardware-configuration.nix
     ];
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+		enable = true;
+  	device = "/dev/sda";
+  	useOSProber = true;
+
+		dedsec-theme = {
+			enable = true;
+			style = "redskull";
+			icon = "color";
+			resolution = "1080p";
+		};
+	};
+	boot.plymouth = {
+		enable = true;
+		font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
+		themePackages = [ pkgs.catppuccin-plymouth ];
+    theme = "catppuccin-macchiato";
+	};
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -52,8 +67,8 @@
 
   # Enable the X11 windowing system
   services.xserver = {
-    layout = "es";
-    xkbVariant = "";
+    layout = "es,us";
+    xkbVariant = "grp:alt_shift_toggle";
     enable = true;
     displayManager.gdm = {
       enable = true;

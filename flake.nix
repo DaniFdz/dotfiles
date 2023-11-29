@@ -25,9 +25,14 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+		dedsec-grub-theme = {
+			url = gitlab:VandalByte/dedsec-grub-theme;
+      inputs.nixpkgs.follows = "nixpkgs";
+		};
   };
 
-  outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, NixOS-WSL, dedsec-grub-theme, ... }@inputs:
     let
       inherit (self) outputs;
     in {
@@ -42,6 +47,7 @@
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
           modules = [
             ./hosts/gnome
+						dedsec-grub-theme.nixosModule
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
