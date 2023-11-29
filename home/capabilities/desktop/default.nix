@@ -12,9 +12,8 @@
   ];
 
   home.sessionVariables = {
-		GTK_THEME = "Catppuccin-Macchiato-Standard-Teal-Dark";
-		XCURSOR_THEME = "Bibata-Modern-Ice";
-		XCURSOR_SIZE = "24";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
     NIXOS_OZONE_WL = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
   };

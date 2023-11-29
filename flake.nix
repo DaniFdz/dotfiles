@@ -57,6 +57,21 @@
             }
           ];
         };
+        hypr = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
+          modules = [
+            ./hosts/hypr
+            dedsec-grub-theme.nixosModule
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.dani = import ./home/hypr;
+            }
+          ];
+        };
         wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
