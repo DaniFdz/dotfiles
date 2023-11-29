@@ -1,12 +1,6 @@
 { pkgs, inputs, ... }:
 
 {
-
-  imports = [
-    ../waybar
-    ../dunst
-  ];
-
   home.packages = with pkgs; [ 
     wl-clipboard 
     neofetch 
@@ -14,6 +8,9 @@
   ];
 
   programs.wofi.enable = true;
+
+	home.file."${config.home.homeDirectory}/hypr/macchiato.conf" = { source = macchiato.conf; };
+	home.file."${config.home.homeDirectory}/hypr/configs" = { source = ./configs; recursive = true; };
 
   wayland.windowManager.hyprland = {
     enable = true;
