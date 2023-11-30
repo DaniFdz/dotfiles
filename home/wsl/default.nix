@@ -7,6 +7,7 @@
     ../capabilities/terminal
     ../capabilities/nvim
     ../capabilities/tmux
+		../capabilities/developing
   ];
 
   fonts.fontconfig.enable = true;
