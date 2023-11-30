@@ -6,12 +6,12 @@
 		./waybar
 		./dunst
 		./wofi
+		./webcord
   ];
 
 	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
 
   home.packages = with pkgs; [ 
-    webcord
     gnome.nautilus
     arandr
 		swww

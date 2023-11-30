@@ -128,7 +128,6 @@
     file
     wget
     curl
-    discord
 		keepassxc
 		syncthing
     pavucontrol
