@@ -51,6 +51,23 @@
             }
           ];
         };
+        pc = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
+          modules = [
+            ./hosts/pc
+						inputs.hyprland.nixosModules.default
+						{ programs.hyprland.enable = true; }
+						inputs.minegrub.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.dani = import ./home/pc;
+            }
+          ];
+        };
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
