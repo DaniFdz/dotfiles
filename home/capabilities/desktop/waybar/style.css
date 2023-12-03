@@ -1,50 +1,64 @@
+@import "theme.css";
+
 *{
-    font-family: JetBrainsMono;
-    font-size: 13px;
-    min-height: 0;
-    color: white;
+  font-family: 'FontAwesome', 'JetBrainsMono', 'Fira Code' ;
+ 	font-size: 13px;
+ 	min-height: 0;
+  color: @text;
+	margin: 1px 5px;
 }
 
 window#waybar {
-    background-color: transparent;
+  background-color: shade(@base, 0.9);
+	border: 2px solid alpha(@mauve, 0.6);
+	border-radius: 10px;
 }
 
+#custom-browser,
+#custom-filemanager,
+#custom-whatsapp,
+#custom-chatgpt{
+	margin: 3px 5px;
+	padding: 0px 5px;
+}
+
+#custom-change_wallpaper,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray{
+	margin: 3px 2px;
+	padding: 0px 1px;
+}
+
+#clock{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-right: 10px;
+	margin-left: 15px;
+}
+
+
 #workspaces{
-    margin-top: 3px;
-    margin-bottom: 2px;
-    margin-right: 10px;
-    margin-left: 25px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 25px;
+	margin-left: 25px;
 }
 
 #workspaces button{
-    border-radius: 15px;
-    margin-right: 10px;
-    padding: 1px 10px;
-    font-weight: bolder;
-    background-color: #181818;
+	border-radius: 10px;
+	margin: 1px 5px;
+	padding: 2px 12px;
+	background-color: shade(@sapphire, 0.9);
+	border: 1px solid alpha(@mauve, 0.6);
+	font-weight: bold;
+	font-size: 14px;
 }
 
 #workspaces button.active, #workspaces button.focused{
-    padding: 0 22px;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    
-    background: #7C9D96;
+	background-color: shade(@rosewater, 0.8);
+	border: 1px solid alpha(@peach, 0.6);
 }
 
-#tray,
-#mpd,
-#custom-weather,
-#cpu, 
-#temperature, 
-#memory,
-#sway-mode,
-#backlight, 
-#pulseaudio, 
-#custom-vpn,
-#disk,
-#custom-recorder,
-#custom-audiorec,
-#battery, 
-#clock, 
-#network {
-	padding: 0 10px;
-}

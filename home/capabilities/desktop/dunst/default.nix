@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.inter ];
+  home.packages = with pkgs; [
+		inter
+		libnotify
+	];
 
   services.dunst = {
     enable = true;

@@ -8,7 +8,7 @@
 
   programs.wofi.enable = true;
 
-	home.file.".config/hypr/macchiato.conf" = { source = ./macchiato.conf; };
+	home.file.".config/hypr/theme.conf" = { source = ./theme.conf; };
 	home.file.".config/hypr/configs" = { source = ./configs; recursive = true; };
 
   wayland.windowManager.hyprland = {

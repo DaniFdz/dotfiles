@@ -29,7 +29,8 @@
       mpv
       docker-compose
 			brave
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+			font-awesome
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
 
