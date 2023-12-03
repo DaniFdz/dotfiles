@@ -16,6 +16,10 @@
 			enable = true;
 			splash = "100% Flakes!";
 		};
+		extraConfig = ''
+			# Disable grub timeout to speed up booting.
+			set timeout=10
+			'';
   };
 
   time.hardwareClockInLocalTime = true;
