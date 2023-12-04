@@ -17,6 +17,7 @@
     arandr
 		swww
 		waybar
+		brightnessctl
   ];
 
   home.sessionVariables = {

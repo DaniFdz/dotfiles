@@ -10,7 +10,7 @@
 
 "modules-left": ["custom/browser","custom/chatgpt","custom/filemanager", "custom/whatsapp"],
 "modules-center": ["hyprland/workspaces"],
-"modules-right":  ["tray", "network", "battery", "pulseaudio", "backlight", "custom/change_wallpaper", "battery", "clock"],
+"modules-right":  ["tray", "network", "battery", "pulseaudio", "backlight", "custom/change_wallpaper", "clock"],
 
 // Filemanager Launcher
 "custom/filemanager": {
@@ -60,7 +60,7 @@
   "format-charging": "&#8239;{capacity}%",
   "format-plugged": "&#8239;{capacity}%",
   "format-alt": "{icon} {time}",
-  "format-icons": ["", "", "", "", "", "", ""]
+  "format-icons": ["󰂎", "󰁺", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
 },
 "hyprland/window": {
     "max-length": 200,
@@ -77,7 +77,7 @@
 },
 "network": {
   "interval": 2,
-  "format-wifi": " {signalStrength}%",
+  "format-wifi": "  {signalStrength}%",
   "format-ethernet": "",
   "format-linked": "{ipaddr}",
   "format-disconnected": " Disconnected",
@@ -91,11 +91,11 @@
     // "device": "acpi_video1",
     "format": "{icon}&#8239;{percent}%",
     "format-icons": ["", ""],
-    "on-scroll-down": "brightnessctl -c backlight set 1%-",
-    "on-scroll-up": "brightnessctl -c backlight set +1%"
+    "on-scroll-up": "brightnessctl -c backlight set 1%-",
+    "on-scroll-down": "brightnessctl -c backlight set +1%"
 },
 "pulseaudio": {
-  // "scroll-step": 1, // %, can be a float
+  //"scroll-step": -1, // %, can be a float
   "format": "{icon} {volume}% {format_source}",
   "format-bluetooth": "{icon} {volume}% {format_source}",
   "format-bluetooth-muted": " {format_source}",
