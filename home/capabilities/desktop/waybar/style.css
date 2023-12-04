@@ -66,20 +66,6 @@ window#waybar {
 	color: @red;
 }
 
-
-#pulseaudio.volume{
-	color: @green;
-}
-#pulseaudio.bluetooth{
-	color: @blue;
-}
-#pulseaudio.muted{
-	color: @red;
-}
-#pulseaudio.source{
-	color: @blue;
-}
-
 #network.ethernet{
 	margin: 3px 0px;
 	padding: 0px;

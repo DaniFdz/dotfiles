@@ -17,6 +17,10 @@
     arandr
 		swww
 		waybar
+		grim
+		slurp
+		imagemagick
+		swappy
 		brightnessctl
   ];
 
