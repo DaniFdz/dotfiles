@@ -78,7 +78,7 @@
 "network": {
   "interval": 2,
   "format-wifi": "  {signalStrength}%",
-  "format-ethernet": "",
+  "format-ethernet": "󰈀",
   "format-linked": "{ipaddr}",
   "format-disconnected": " Disconnected",
   "format-disabled": "",
