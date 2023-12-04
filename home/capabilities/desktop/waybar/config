@@ -8,7 +8,7 @@
 "margin-right":10,
 
 
-"modules-left": ["custom/browser","custom/chatgpt","custom/filemanager", "custom/whatsapp"],
+"modules-left": ["custom/browser","custom/chatgpt","custom/filemanager", "custom/whatsapp", "custom/discord"],
 "modules-center": ["hyprland/workspaces"],
 "modules-right":  ["tray", "network", "battery", "pulseaudio", "backlight", "custom/change_wallpaper", "clock"],
 
@@ -36,6 +36,13 @@
 "custom/whatsapp": {
 	"format": "",
 	"on-click": "brave --app=https://web.whatsapp.com",
+	"tooltip": false
+},
+
+// Discord Launcher
+"custom/discord": {
+	"format": "󰙯",
+	"on-click": "webcord",
 	"tooltip": false
 },
 
@@ -103,7 +110,7 @@
   "format-source": "  {volume}% ",
   "format-source-muted": "",
   "format-icons": {
-    "headphone": "",
+    "headphone": " ",
     "hands-free": "",
     "headset": "🎧",
     "phone": "",

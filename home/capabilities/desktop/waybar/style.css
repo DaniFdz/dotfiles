@@ -10,16 +10,37 @@
 
 window#waybar {
   background-color: shade(@base, 0.9);
-	border: 2px solid alpha(@mauve, 0.6);
+	border: 2px solid alpha(@mauve, 0.9);
 	border-radius: 10px;
 }
 
 #custom-browser,
 #custom-filemanager,
 #custom-whatsapp,
+#custom-discord,
 #custom-chatgpt{
 	margin: 3px 5px;
 	padding: 0px 5px;
+}
+
+#custom-browser{
+	color: @peach;
+}
+#custom-chatgpt{
+	color: @maroon;
+}
+#custom-filemanager{
+	color: @rosewater;
+}
+#custom-whatsapp{
+	color: @green;
+}
+#custom-discord{
+	color: @blue;
+}
+
+#custom-change_wallpaper{
+	color: @red;
 }
 
 #custom-change_wallpaper,
@@ -30,6 +51,39 @@ window#waybar {
 #tray{
 	margin: 3px 2px;
 	padding: 0px 1px;
+}
+
+#battery{
+	color: @green;
+}
+#battery.charging{
+	color: @blue;
+}
+#battery.low{
+	color: @peach;
+}
+#battery.critical{
+	color: @red;
+}
+
+
+#pulseaudio.volume{
+	color: @green;
+}
+#pulseaudio.bluetooth{
+	color: @blue;
+}
+#pulseaudio.muted{
+	color: @red;
+}
+#pulseaudio.source{
+	color: @blue;
+}
+
+#network.ethernet{
+	margin: 3px 0px;
+	padding: 0px;
+	color: @sky;
 }
 
 #clock{
