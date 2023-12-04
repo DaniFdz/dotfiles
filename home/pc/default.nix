@@ -18,7 +18,7 @@
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
 
-	home.file.".config/hypr/configs/monitor.conf" = { source = ./monitor.conf; recursive = true; };
+	home.file.".config/hypr/configs/monitors.conf" = { source = ./monitors.conf; recursive = true; };
 
   home = {
     username = "dani";
