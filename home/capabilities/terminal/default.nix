@@ -3,10 +3,15 @@
 {
   home.packages = with pkgs; [
     zsh
-    lsd
     xclip
+    lsd # Better ls
+		sd # Better syntax for sed command
+		fd # Better syntax for find command
+		delta # Git diff
+		tokei # Count lines of code
+		just # Makefile alternative
   ];
-  
+ 
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -57,6 +62,7 @@
       bindkey "\e[3~" delete-char
       bindkey "\e[H"  beginning-of-line
       bindkey "\e[F"  end-of-line
+			if [ "$TMUX" = "" ]; then tmux; fi
     '';
 
     zplug = {
@@ -90,4 +96,23 @@
       };
     };
   };
+
+	home.file.".gitconfig".text = ''# https://dandavison.github.io/delta/introduction.html
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+		line-numbers = true
+		side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default'';
 }
