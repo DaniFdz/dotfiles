@@ -10,6 +10,7 @@
 		delta # Git diff
 		tokei # Count lines of code
 		just # Makefile alternative
+		glow # Markdown preview
   ];
  
   programs.zsh = {
