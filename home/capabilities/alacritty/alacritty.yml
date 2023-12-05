@@ -183,6 +183,15 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: false
 
+  hints:
+    enabled:
+      - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\" {-}\\^⟨⟩`]+"
+        command: /run/current-system/sw/bin/xdg-open
+        post_processing: true
+        mouse:
+          enabled: true
+          mods: Control
+
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
