@@ -71,8 +71,12 @@
         config = toLuaFile ./plugins/rust-tools.lua;
       }
 
-      vim-tmux-navigator
+      {
+        plugin = vimtex;
+        config = toLuaFile ./plugins/vimtex.lua;
+      }
 
+      vim-tmux-navigator
 			colorizer
     ];
   };

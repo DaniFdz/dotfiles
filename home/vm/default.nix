@@ -10,6 +10,7 @@
     ../capabilities/nvim
     ../capabilities/tmux
 		../capabilities/developing
+		../capabilities/zathura
   ];
 
   fonts.fontconfig.enable = true;

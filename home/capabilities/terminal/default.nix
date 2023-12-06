@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     zsh
+		unzip
+		p7zip
     xclip
     lsd # Better ls
 		sd # Better syntax for sed command

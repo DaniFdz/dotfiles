@@ -11,6 +11,7 @@
     ../capabilities/tmux
     ../capabilities/desktop
 		../capabilities/developing
+		../capabilities/zathura
   ];
 
   fonts.fontconfig.enable = true;
