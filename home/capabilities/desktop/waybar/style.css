@@ -112,6 +112,10 @@ window#waybar {
 	margin-left: 25px;
 }
 
+#workspaces *{
+		color: @crust;
+}
+
 #workspaces button{
 	padding: 4px 18px;
 	background-color: shade(@sapphire, 0.9);
