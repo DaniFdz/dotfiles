@@ -42,7 +42,7 @@
 // Discord Launcher
 "custom/discord": {
 	"format": "󰙯",
-	"on-click": "webcord",
+	"on-click": "discord",
 	"tooltip": false
 },
 

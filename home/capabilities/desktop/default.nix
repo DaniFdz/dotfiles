@@ -14,6 +14,7 @@
   home.packages = with pkgs; [ 
     gnome.nautilus
     arandr
+		playerctl
 		swww
 		waybar
 		discord
