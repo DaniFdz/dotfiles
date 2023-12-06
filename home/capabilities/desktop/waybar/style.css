@@ -14,91 +14,110 @@ window#waybar {
 	border-radius: 10px;
 }
 
+#workspaces button,
 #custom-browser,
 #custom-filemanager,
 #custom-whatsapp,
 #custom-discord,
-#custom-chatgpt{
-	margin: 3px 5px;
-	padding: 0px 5px;
-}
-
-#custom-browser{
-	color: @peach;
-}
-#custom-chatgpt{
-	color: @maroon;
-}
-#custom-filemanager{
-	color: @rosewater;
-}
-#custom-whatsapp{
-	color: @green;
-}
-#custom-discord{
-	color: @blue;
-}
-
-#custom-change_wallpaper{
-	color: @red;
-}
-
+#custom-chatgpt,
 #custom-change_wallpaper,
 #battery,
 #network,
 #pulseaudio,
 #backlight,
+#clock,
 #tray{
-	margin: 3px 2px;
-	padding: 0px 1px;
+	/* margin: 3px 2px; */
+	/* padding: 0px 1px; */
+	border-radius: 4px;
+	margin: 6px 3px;
+	padding: 6px 12px;
+	background-color: @mantle;
+	color: @crust;
 }
 
-#battery{
-	color: @green;
+#custom-browser{
+	background-color: @peach;
 }
-#battery.charging{
-	color: @blue;
+#custom-chatgpt{
+	background-color: @maroon;
 }
-#battery.low{
-	color: @peach;
+#custom-filemanager{
+	background-color: @rosewater;
 }
-#battery.critical{
-	color: @red;
+#custom-whatsapp{
+	background-color: @green;
 }
-
-#network.ethernet{
-	margin: 3px 0px;
-	padding: 0px;
-	color: @sky;
+#custom-discord{
+	background-color: @blue;
 }
 
-#clock{
-	margin-top: 3px;
-	margin-bottom: 3px;
-	margin-right: 10px;
-	margin-left: 15px;
+#custom-change_wallpaper{
+	background-color: @red;
 }
 
+#battery {
+  background-color: @red;
+}
+@keyframes blink {
+  to {
+    background-color: @red;
+    color: @crust;
+  }
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0048;
+  color: #181825;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#battery.charging {
+  background-color: @green;
+}
+
+#backlight {
+  background-color: @peach;
+}
+
+#pulseaudio {
+  background-color: @yellow
+}
+
+#network {
+  background-color: @teal;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  background-color: @mauve;
+}
+
+#custom-change_wallpaper {
+  background-color:@rosewater;
+}
+
+#tray {
+	background-color: @base;
+}
 
 #workspaces{
-	margin-top: 2px;
-	margin-bottom: 2px;
 	margin-right: 25px;
 	margin-left: 25px;
 }
 
 #workspaces button{
-	border-radius: 10px;
-	margin: 1px 5px;
-	padding: 2px 12px;
+	padding: 4px 18px;
 	background-color: shade(@sapphire, 0.9);
-	border: 1px solid alpha(@mauve, 0.6);
-	font-weight: bold;
-	font-size: 14px;
 }
 
 #workspaces button.active, #workspaces button.focused{
 	background-color: shade(@rosewater, 0.8);
-	border: 1px solid alpha(@peach, 0.6);
 }
 

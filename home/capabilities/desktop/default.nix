@@ -5,7 +5,6 @@
     ./hyprland
 		./dunst
 		./wofi
-		./webcord
   ];
 
 	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
@@ -17,6 +16,8 @@
     arandr
 		swww
 		waybar
+		discord
+
 		grim
 		slurp
 		imagemagick

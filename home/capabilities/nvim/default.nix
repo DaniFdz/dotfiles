@@ -72,6 +72,8 @@
       }
 
       vim-tmux-navigator
+
+			colorizer
     ];
   };
 }

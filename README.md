@@ -1,6 +1,10 @@
 # NixOS home-manager dotfiles
 
 <p align="center">
+    <img src="./assets/Desktop.png">
+</p>
+
+<p align="center">
     <a href="https://nixos.org/">
         <img src="https://img.shields.io/badge/NixOS-23.05-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41">
     </a>
