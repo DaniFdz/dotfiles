@@ -5,6 +5,7 @@
     ./hyprland
 		./dunst
 		./wofi
+		./webcord
   ];
 
 	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
@@ -18,6 +19,7 @@
 		swww
 		waybar
 		discord
+		globalprotect-openconnect
 
 		grim
 		slurp
