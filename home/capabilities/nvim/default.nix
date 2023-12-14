@@ -19,6 +19,7 @@
       luajitPackages.lua-lsp
 			vscode-langservers-extracted
 			nodePackages.pyright
+			nodePackages.typescript-language-server
     ];
 
     extraLuaConfig = ''
@@ -81,6 +82,10 @@
       vim-tmux-navigator
 			colorizer
 
+			{
+				plugin = nvim-treesitter.withAllGrammars;
+				config = toLuaFile ./plugins/treesitter.lua;
+			}
     ];
   };
 }

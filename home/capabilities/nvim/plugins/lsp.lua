@@ -26,6 +26,7 @@ require("neodev").setup({
 })
 
 local lspconfig = require("lspconfig")
+
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -44,7 +45,17 @@ lspconfig.cssls.setup({
 lspconfig.emmet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "css", "scss", "javascript" },
+	filetypes = { "html", "css", "scss"},
+})
+
+lspconfig.tsserver.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		prferences = {
+			disableSuggestions = true,
+		},
+	},
 })
 
 
