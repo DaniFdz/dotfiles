@@ -10,5 +10,7 @@
 		cargo-generate
 		rustc
 		gcc
+
+		nodejs_21
   ];
 }
