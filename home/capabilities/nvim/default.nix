@@ -14,8 +14,11 @@
 
     extraPackages = with pkgs; [
       rnix-lsp
-			rust-analyzer
+      emmet-ls
+      rust-analyzer
       luajitPackages.lua-lsp
+			vscode-langservers-extracted
+			nodePackages.pyright
     ];
 
     extraLuaConfig = ''
@@ -34,10 +37,6 @@
         config = toLua "require(\"Comment\").setup()";
       }
 
-      nerdtree-git-plugin
-      vim-nerdtree-syntax-highlight
-      vim-devicons
-
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./plugins/lsp.lua;
@@ -55,6 +54,9 @@
         plugin = nerdtree;
         config = toLuaFile ./plugins/nerdtree.lua;
       }
+      nerdtree-git-plugin
+      vim-nerdtree-syntax-highlight
+      vim-devicons
 
       {
         plugin = cmp-copilot;
@@ -78,6 +80,7 @@
 
       vim-tmux-navigator
 			colorizer
+
     ];
   };
 }

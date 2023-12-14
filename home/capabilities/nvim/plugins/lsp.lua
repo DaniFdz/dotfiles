@@ -31,6 +31,24 @@ lspconfig.pyright.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.html.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.emmet_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "html", "css", "scss", "javascript" },
+})
+
+
+
 
 local on_attach = function (_, bufnr)
 	local bufmap = function(shortcut, command)
