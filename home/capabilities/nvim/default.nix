@@ -19,6 +19,7 @@
       luajitPackages.lua-lsp
 			vscode-langservers-extracted
 			nodePackages.pyright
+			python311Packages.flake8
 			nodePackages.typescript-language-server
     ];
 
@@ -85,6 +86,11 @@
 			{
 				plugin = nvim-treesitter.withAllGrammars;
 				config = toLuaFile ./plugins/treesitter.lua;
+			}
+
+			{
+				plugin = nvim-lint;
+				config = toLuaFile ./plugins/lint.lua;
 			}
     ];
   };
