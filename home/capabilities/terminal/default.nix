@@ -29,7 +29,7 @@
       catl = "bat --theme=Dracula";
       catn = "/run/current-system/sw/bin/cat";
       get-my-ip = "echo (ifconfig | grep 'inet ' | awk '{print 2}' | grep -v '127.0.0.1')";
-      cc = "xclip -sel clip";
+      cc = "wl-copy";
       my-ip = "get-my-ip && get-my-ip | cc";
       pwd = "pwd && pwd | cc";
       python = "python3";
@@ -41,6 +41,7 @@
       pdw = "pwd";
       naut = "nautilus";
       tb = "nc termbin.com 9999";
+			code = "code --enable-features=UseOzonePlatform --ozone-platform=x11 &>/dev/null";
     };
     envExtra = ''
       [[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh

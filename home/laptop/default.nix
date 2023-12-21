@@ -12,6 +12,7 @@
     ../capabilities/desktop
 		../capabilities/developing
 		../capabilities/zathura
+		../capabilities/vscode
   ];
 
   fonts.fontconfig.enable = true;
