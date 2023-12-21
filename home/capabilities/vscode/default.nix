@@ -16,6 +16,7 @@
 			github.copilot
 			github.copilot-chat
 			ms-azuretools.vscode-docker
+			arrterian.nix-env-selector
 		];
 		keybindings = [
 			{
@@ -39,14 +40,15 @@
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Tokyo Night";
-			"editor.fontSize" = 17;
-			"terminal.integrated.fontSize" = 16;
+			"editor.fontSize" = 15;
+			"terminal.integrated.fontSize" = 14;
 			"window.zoomLevel" = -2;
 			"editor.fontFamily" = "FiraCode Nerd Font";
 			"terminal.integrated.fontFamily" = "FiraCode Nerd Font";
 			"editor.fontLigatures" = true;
 			"editor.wordWrap" = "on";
 			"workbench.sideBar.location" = "left";
+			"terminal.integrated.defaultProfile.linux" = "zsh";
 			"vim.useSystemClipboard" = true;
 			"vim.handleKeys" = {
 				"<C-w>" = false;
