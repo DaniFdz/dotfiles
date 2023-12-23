@@ -16,6 +16,9 @@
       rnix-lsp
       emmet-ls
       rust-analyzer
+			eslint_d
+			hadolint
+			python311Packages.flake8
       luajitPackages.lua-lsp
 			vscode-langservers-extracted
 			nodePackages.pyright
@@ -37,6 +40,11 @@
         plugin = comment-nvim;
         config = toLua "require(\"Comment\").setup()";
       }
+
+			{
+				plugin = blamer-nvim;
+				config = toLua "vim.g.blamer_enabled = 1";
+			}
 
       {
         plugin = nvim-lspconfig;
@@ -85,6 +93,11 @@
 			{
 				plugin = nvim-treesitter.withAllGrammars;
 				config = toLuaFile ./plugins/treesitter.lua;
+			}
+
+			{
+				plugin = nvim-lint;
+				config = toLuaFile ./plugins/lint.lua;
 			}
     ];
   };
