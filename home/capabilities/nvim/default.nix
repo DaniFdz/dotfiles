@@ -99,6 +99,14 @@
 				plugin = nvim-lint;
 				config = toLuaFile ./plugins/lint.lua;
 			}
+
+			{
+				plugin = telescope-nvim;
+				config = toLuaFile ./plugins/telescope.lua;
+			}
+			telescope-media-files-nvim
+			telescope-fzf-native-nvim
+			telescope-file-browser-nvim
     ];
   };
 }
