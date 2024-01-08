@@ -13,6 +13,7 @@
 		tokei # Count lines of code
 		just # Makefile alternative
 		glow # Markdown preview
+		lazydocker # Docker UI
   ];
  
   programs.zsh = {
