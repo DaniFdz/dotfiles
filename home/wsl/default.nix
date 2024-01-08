@@ -4,6 +4,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
+    ../capabilities/hacking_min
     ../capabilities/terminal
     ../capabilities/nvim
     ../capabilities/tmux
