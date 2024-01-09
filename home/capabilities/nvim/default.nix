@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.neovim = 
@@ -29,7 +29,8 @@
       ${builtins.readFile ./options.lua}
     '';
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs.vimPlugins; 
+		[
       # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
       {
         plugin = catppuccin-nvim;
@@ -107,6 +108,18 @@
 			telescope-media-files-nvim
 			telescope-fzf-native-nvim
 			telescope-file-browser-nvim
+
+			nui-nvim
+			nvim-notify
+			{
+				plugin = noice-nvim;
+				config = toLuaFile ./plugins/noice.lua;
+			}
+
+			{
+				plugin = goto-preview;
+				config = toLuaFile ./plugins/goto-preview.lua;
+			}
     ];
   };
 }
