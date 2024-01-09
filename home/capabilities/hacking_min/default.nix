@@ -7,6 +7,5 @@
 		wfuzz
 		gobuster
 		john
-		tshark
   ];
 }
