@@ -26,6 +26,8 @@
 		imagemagick
 		swappy
 		brightnessctl
+
+		obsidian
   ];
 
   home.sessionVariables = {

@@ -13,7 +13,7 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
-			luajitPackages.lua-lsp
+	lua-language-server
       rnix-lsp
       emmet-ls
       rust-analyzer
@@ -150,6 +150,7 @@
 				plugin = bufferline-nvim;
 				config = toLuaFile ./plugins/bufferline.lua;
 			}
+			nvim-web-devicons
 
 			{
 				plugin = FTerm-nvim;
@@ -157,6 +158,11 @@
 			}
 
 			vim-fugitive
+
+			{
+				plugin = alpha-nvim;
+				config = toLuaFile ./plugins/dashboard.lua;
+			}
     ];
   };
 }
