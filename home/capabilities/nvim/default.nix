@@ -13,6 +13,7 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+			luajitPackages.lua-lsp
       rnix-lsp
       emmet-ls
       rust-analyzer
@@ -30,6 +31,12 @@
     '';
 
     plugins = with pkgs.vimPlugins; 
+		let
+			own-obsidian = pkgs.vimUtils.buildVimPlugin {
+				name = "obsidian";
+				src = inputs.obsidian;
+			};
+		in
 		[
       # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
       {
@@ -110,7 +117,10 @@
 			telescope-file-browser-nvim
 
 			nui-nvim
-			nvim-notify
+			{
+				plugin = nvim-notify;
+				config = toLuaFile ./plugins/notify.lua;
+			}
 			{
 				plugin = noice-nvim;
 				config = toLuaFile ./plugins/noice.lua;
@@ -120,6 +130,33 @@
 				plugin = goto-preview;
 				config = toLuaFile ./plugins/goto-preview.lua;
 			}
+
+			plenary-nvim
+			{
+				plugin = neorg;
+				config = toLuaFile ./plugins/neorg.lua;
+			}
+			{
+				plugin = own-obsidian;
+				config = toLuaFile ./plugins/obsidian.lua;
+			}
+
+			{
+				plugin = nvim-cursorline;
+				config = toLuaFile ./plugins/cursorline.lua;
+			}
+
+			{
+				plugin = bufferline-nvim;
+				config = toLuaFile ./plugins/bufferline.lua;
+			}
+
+			{
+				plugin = FTerm-nvim;
+				config = toLuaFile ./plugins/fterm.lua;
+			}
+
+			vim-fugitive
     ];
   };
 }

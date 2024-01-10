@@ -14,6 +14,7 @@
 		just # Makefile alternative
 		glow # Markdown preview
 		lazydocker # Docker UI
+		ripgrep # Better grep
   ];
  
   programs.zsh = {

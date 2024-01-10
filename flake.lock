@@ -189,13 +189,30 @@
         "type": "github"
       }
     },
+    "obsidian": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704820866,
+        "narHash": "sha256-+w3XYoobuH17oinPfQxhrizbmQB5IbbulUK69674/Wg=",
+        "owner": "epwalsh",
+        "repo": "obsidian.nvim",
+        "rev": "bc2561cd4d8049a5c91415f15bfb5c3e68b79c48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "epwalsh",
+        "repo": "obsidian.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "NixOS-WSL": "NixOS-WSL",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "minegrub": "minegrub",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "obsidian": "obsidian"
       }
     },
     "systems": {

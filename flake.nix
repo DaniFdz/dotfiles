@@ -22,6 +22,10 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
 		minegrub.url = "github:Lxtharia/minegrub-theme";
+		obsidian = {
+			flake = false;
+			url = "github:epwalsh/obsidian.nvim";
+		};
   };
 
   outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:
