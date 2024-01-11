@@ -110,8 +110,15 @@ telescope.setup {
 			-- initial_mode = "normal",
 			-- hidden = true,
 		},
+		["ui-select"] = {
+			-- theme = "ivy",
+			-- previewer = false,
+			require("telescope.themes").get_dropdown({}),
+		}
   },
 }
+
+telescope.load_extension("ui-select")
 
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true })

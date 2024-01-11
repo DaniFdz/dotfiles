@@ -5,7 +5,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
-local onrattach = function (_, bufnr)
+local on_attach = function (_, bufnr)
 	local bufmap = function(shortcut, command)
 		vim.keymap.set("n", shortcut, command, { buffer = bufnr })
 	end
@@ -22,7 +22,6 @@ local onrattach = function (_, bufnr)
 	bufmap("<leader>D", vim.lsp.buf.type_definition)
 	bufmap("<leader>rn", vim.lsp.buf.rename)
 	bufmap("<leader>ca", vim.lsp.buf.code_action)
-	
 	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
 		vim.lsp.buf.format()
 	end, {})

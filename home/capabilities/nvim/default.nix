@@ -115,6 +115,7 @@
 			telescope-media-files-nvim
 			telescope-fzf-native-nvim
 			telescope-file-browser-nvim
+			telescope-ui-select-nvim
 
 			nui-nvim
 			{
