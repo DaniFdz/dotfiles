@@ -26,6 +26,11 @@
 			flake = false;
 			url = "github:epwalsh/obsidian.nvim";
 		};
+
+		none-ls = {
+			flake = false;
+			url = "github:nvimtools/none-ls.nvim";
+		};
   };
 
   outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:

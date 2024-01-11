@@ -189,6 +189,22 @@
         "type": "github"
       }
     },
+    "none-ls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704269551,
+        "narHash": "sha256-RywvfEblN0dukmPVCn0r7+hQr9L1VP5fyHHnOcfvda8=",
+        "owner": "nvimtools",
+        "repo": "none-ls.nvim",
+        "rev": "fbdcbf8e152529af846b3a333f039751829b84c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvimtools",
+        "repo": "none-ls.nvim",
+        "type": "github"
+      }
+    },
     "obsidian": {
       "flake": false,
       "locked": {
@@ -212,6 +228,7 @@
         "hyprland": "hyprland",
         "minegrub": "minegrub",
         "nixpkgs": "nixpkgs_3",
+        "none-ls": "none-ls",
         "obsidian": "obsidian"
       }
     },

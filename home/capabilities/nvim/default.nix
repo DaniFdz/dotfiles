@@ -7,23 +7,29 @@
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
   in
 	{
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+		enable = true;
+		viAlias = true;
+		vimAlias = true;
+		vimdiffAlias = true;
 
-    extraPackages = with pkgs; [
-	lua-language-server
-      rnix-lsp
-      emmet-ls
-      rust-analyzer
-			eslint_d
-			hadolint
+		extraPackages = with pkgs; [
+			lua-language-server
+			rnix-lsp
+			emmet-ls
+			rust-analyzer
 			python311Packages.flake8
-      luajitPackages.lua-lsp
+			python311Packages.black
+			python311Packages.isort
+			luajitPackages.lua-lsp
+			luajitPackages.luacheck
 			vscode-langservers-extracted
 			nodePackages.pyright
+			nodePackages_latest.prettier
 			nodePackages.typescript-language-server
+			rustfmt
+			stylua
+			eslint_d
+			hadolint
     ];
 
     extraLuaConfig = ''
@@ -35,6 +41,10 @@
 			own-obsidian = pkgs.vimUtils.buildVimPlugin {
 				name = "obsidian";
 				src = inputs.obsidian;
+			};
+			own-none-ls-nvim = pkgs.vimUtils.buildVimPlugin {
+				name = "none-ls-nvim";
+				src = inputs.none-ls;
 			};
 		in
 		[
@@ -104,7 +114,7 @@
 			}
 
 			{
-				plugin = nvim-lint;
+				plugin = own-none-ls-nvim;
 				config = toLuaFile ./plugins/lint.lua;
 			}
 
