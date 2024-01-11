@@ -6,16 +6,25 @@ local b = null_ls.builtins
 
 null_ls.setup({
 	sources = {
+		-- Python3
 		b.diagnostics.flake8,
-		b.diagnostics.eslint_d,
-		b.diagnostics.hadolint,
-		b.diagnostics.luacheck,
-		b.formatting.stylelua,
 		b.formatting.black,
 		b.formatting.isort,
+
+		-- Js
+		b.diagnostics.eslint_d,
 		b.formatting.prettier,
+
+		-- Lua
+		b.diagnostics.luacheck,
+		b.formatting.stylelua,
+
+		-- Rust
 		b.formatting.rustfmt,
+
+		-- Docker
+		b.diagnostics.hadolint,
 	},
 })
 
-vim.api.nvim_set_keymap('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
