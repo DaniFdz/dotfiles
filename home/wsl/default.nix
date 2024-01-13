@@ -4,6 +4,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
+    ../capabilities/scripts
     ../capabilities/hacking_min
     ../capabilities/terminal
     ../capabilities/nvim
@@ -12,6 +13,10 @@
   ];
 
   fonts.fontconfig.enable = true;
+
+  home.packages = with pkgs; [
+		tshark
+	];
 
   home = {
     username = "dani";

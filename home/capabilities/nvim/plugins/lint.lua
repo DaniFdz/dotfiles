@@ -24,6 +24,10 @@ null_ls.setup({
 
 		-- Docker
 		b.diagnostics.hadolint,
+
+		-- Shell
+		b.diagnostics.shellcheck,
+		b.formatting.shfmt,
 	},
 })
 

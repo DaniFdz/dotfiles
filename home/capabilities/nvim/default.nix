@@ -30,6 +30,8 @@
 			stylua
 			eslint_d
 			hadolint
+			shellcheck
+			shfmt
     ];
 
     extraLuaConfig = ''

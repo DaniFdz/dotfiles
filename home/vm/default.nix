@@ -5,6 +5,7 @@
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
     ../capabilities/hacking
+    ../capabilities/scripts
     ../capabilities/alacritty
     ../capabilities/kitty
     ../capabilities/terminal

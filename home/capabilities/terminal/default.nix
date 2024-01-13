@@ -44,6 +44,7 @@
       naut = "nautilus";
       tb = "nc termbin.com 9999";
 			code = "code --enable-features=UseOzonePlatform --ozone-platform=x11 &>/dev/null";
+			n = "nvim";
     };
     envExtra = ''
       [[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh

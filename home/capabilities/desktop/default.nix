@@ -10,7 +10,6 @@
 
 	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
 	home.file.".config/waybar" = { source = ./waybar; recursive = true; };
-	home.file.".config/scripts" = { source = ./scripts; recursive = true; };
 
   home.packages = with pkgs; [ 
     gnome.nautilus

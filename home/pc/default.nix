@@ -4,6 +4,7 @@
   imports = [
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
+    ../capabilities/scripts
     ../capabilities/hacking
     ../capabilities/alacritty
     ../capabilities/kitty
