@@ -32,6 +32,9 @@
 			hadolint
 			shellcheck
 			shfmt
+			deadnix
+			nixfmt
+			statix
     ];
 
     extraLuaConfig = ''

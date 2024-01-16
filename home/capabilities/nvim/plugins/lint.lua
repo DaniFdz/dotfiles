@@ -28,6 +28,12 @@ null_ls.setup({
 		-- Shell
 		b.diagnostics.shellcheck,
 		b.formatting.shfmt,
+
+		-- Nix
+		b.diagnostics.deadnix,
+		b.formatting.nixfmt,
+		b.diagnostics.statix,
+		b.code_actions.statix,
 	},
 })
 

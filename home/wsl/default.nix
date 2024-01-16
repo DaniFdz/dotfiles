@@ -14,10 +14,6 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [
-		tshark
-	];
-
   home = {
     username = "dani";
     homeDirectory = "/home/dani"; 
@@ -25,6 +21,7 @@
     stateVersion = "23.11";
     packages = with pkgs; [
       docker-compose
+			tshark
     ];
   };
 
