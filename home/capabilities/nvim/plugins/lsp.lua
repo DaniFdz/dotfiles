@@ -5,7 +5,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
-local on_attach = function (_, bufnr)
+local on_attach = function(_, bufnr)
 	local bufmap = function(shortcut, command)
 		vim.keymap.set("n", shortcut, command, { buffer = bufnr })
 	end
@@ -68,7 +68,7 @@ lspconfig.cssls.setup({
 lspconfig.emmet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "css", "scss"},
+	filetypes = { "html", "css", "scss" },
 })
 
 lspconfig.tsserver.setup({
@@ -84,7 +84,7 @@ lspconfig.tsserver.setup({
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = function ()
+	root_dir = function()
 		return vim.loop.cwd()
 	end,
 	settings = {
@@ -103,4 +103,3 @@ lspconfig.rnix.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-

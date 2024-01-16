@@ -176,6 +176,11 @@
 				plugin = alpha-nvim;
 				config = toLuaFile ./plugins/dashboard.lua;
 			}
+
+			{
+				plugin = harpoon;
+				config = toLuaFile ./plugins/harpoon.lua;
+			}
     ];
   };
 }
