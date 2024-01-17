@@ -7,5 +7,6 @@
 		wfuzz
 		gobuster
 		john
+		whatweb
   ];
 }

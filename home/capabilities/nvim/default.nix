@@ -28,7 +28,7 @@
 			nodePackages.typescript-language-server
 			rustfmt
 			stylua
-			eslint_d
+			nodePackages_latest.eslint
 			hadolint
 			shellcheck
 			shfmt

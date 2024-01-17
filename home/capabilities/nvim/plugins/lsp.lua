@@ -74,11 +74,6 @@ lspconfig.emmet_ls.setup({
 lspconfig.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	init_options = {
-		prferences = {
-			disableSuggestions = true,
-		},
-	},
 })
 
 lspconfig.lua_ls.setup({

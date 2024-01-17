@@ -12,7 +12,7 @@ null_ls.setup({
 		b.formatting.isort,
 
 		-- Js
-		b.diagnostics.eslint_d,
+		b.diagnostics.eslint,
 		b.formatting.prettier,
 
 		-- Lua
