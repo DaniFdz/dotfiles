@@ -3,6 +3,7 @@ local telescope = require "telescope"
 telescope.load_extension("fzf")
 telescope.load_extension("media_files")
 telescope.load_extension("file_browser")
+telescope.load_extension("emoji")
 
 local actions = require "telescope.actions"
 
@@ -171,3 +172,5 @@ vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { nor
 vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fc", "<cmd>Telescope commands<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fe", "<cmd>Telescope emoji<cr>", { noremap = true, silent = true })
+

@@ -17,6 +17,7 @@
 			github.copilot-chat
 			ms-azuretools.vscode-docker
 			arrterian.nix-env-selector
+			astro-build.astro-vscode
 		];
 		keybindings = [
 			{

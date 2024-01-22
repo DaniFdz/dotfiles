@@ -26,6 +26,7 @@
 			nodePackages.pyright
 			nodePackages_latest.prettier
 			nodePackages.typescript-language-server
+			tailwindcss-language-server
 			rustfmt
 			stylua
 			nodePackages_latest.eslint
@@ -43,13 +44,17 @@
 
     plugins = with pkgs.vimPlugins; 
 		let
-			own-obsidian = pkgs.vimUtils.buildVimPlugin {
+			obsidian = pkgs.vimUtils.buildVimPlugin {
 				name = "obsidian";
 				src = inputs.obsidian;
 			};
-			own-none-ls-nvim = pkgs.vimUtils.buildVimPlugin {
+			none-ls-nvim = pkgs.vimUtils.buildVimPlugin {
 				name = "none-ls-nvim";
 				src = inputs.none-ls;
+			};
+			telescope-emoji = pkgs.vimUtils.buildVimPlugin {
+				name = "telescope-emoji";
+				src = inputs.telescope-emoji;
 			};
 		in
 		[
@@ -119,7 +124,7 @@
 			}
 
 			{
-				plugin = own-none-ls-nvim;
+				plugin = none-ls-nvim;
 				config = toLuaFile ./plugins/lint.lua;
 			}
 
@@ -131,6 +136,7 @@
 			telescope-fzf-native-nvim
 			telescope-file-browser-nvim
 			telescope-ui-select-nvim
+			telescope-emoji
 
 			nui-nvim
 			{
@@ -153,7 +159,7 @@
 				config = toLuaFile ./plugins/neorg.lua;
 			}
 			{
-				plugin = own-obsidian;
+				plugin = obsidian;
 				config = toLuaFile ./plugins/obsidian.lua;
 			}
 
@@ -183,6 +189,11 @@
 			{
 				plugin = harpoon;
 				config = toLuaFile ./plugins/harpoon.lua;
+			}
+
+			{
+				plugin = vim-astro;
+				config = toLua "vim.g.astro_typescript = 'enable'";
 			}
     ];
   };

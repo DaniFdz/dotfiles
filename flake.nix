@@ -22,6 +22,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
 		minegrub.url = "github:Lxtharia/minegrub-theme";
+
 		obsidian = {
 			flake = false;
 			url = "github:epwalsh/obsidian.nvim";
@@ -30,6 +31,11 @@
 		none-ls = {
 			flake = false;
 			url = "github:nvimtools/none-ls.nvim";
+		};
+
+		telescope-emoji = {
+			flake = false;
+			url = "github:xiyaowong/telescope-emoji.nvim";
 		};
   };
 

@@ -68,10 +68,15 @@ lspconfig.cssls.setup({
 lspconfig.emmet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "css", "scss" },
+	filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro" },
 })
 
 lspconfig.tsserver.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

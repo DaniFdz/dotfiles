@@ -229,7 +229,8 @@
         "minegrub": "minegrub",
         "nixpkgs": "nixpkgs_3",
         "none-ls": "none-ls",
-        "obsidian": "obsidian"
+        "obsidian": "obsidian",
+        "telescope-emoji": "telescope-emoji"
       }
     },
     "systems": {
@@ -259,6 +260,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "telescope-emoji": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670503796,
+        "narHash": "sha256-8V3MTporANLtZkH0RuLviWlgMmR6fay0WmZ3ZOQzpKI=",
+        "owner": "xiyaowong",
+        "repo": "telescope-emoji.nvim",
+        "rev": "86248d97be84a1ce83f0541500ef9edc99ea2aa1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xiyaowong",
+        "repo": "telescope-emoji.nvim",
         "type": "github"
       }
     },
