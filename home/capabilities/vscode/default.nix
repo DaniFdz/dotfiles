@@ -18,6 +18,7 @@
 			ms-azuretools.vscode-docker
 			arrterian.nix-env-selector
 			astro-build.astro-vscode
+			bradlc.vscode-tailwindcss
 		];
 		keybindings = [
 			{
@@ -41,9 +42,9 @@
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Tokyo Night";
-			"editor.fontSize" = 15;
-			"terminal.integrated.fontSize" = 14;
-			"window.zoomLevel" = -2;
+			"editor.fontSize" = 12;
+			"terminal.integrated.fontSize" = 11;
+			"window.zoomLevel" = -1;
 			"editor.fontFamily" = "FiraCode Nerd Font";
 			"terminal.integrated.fontFamily" = "FiraCode Nerd Font";
 			"editor.fontLigatures" = true;
