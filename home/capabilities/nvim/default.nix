@@ -186,10 +186,10 @@
 				config = toLuaFile ./plugins/dashboard.lua;
 			}
 
-			{
-				plugin = harpoon;
-				config = toLuaFile ./plugins/harpoon.lua;
-			}
+			# {
+			# 	plugin = harpoon;
+			# 	config = toLuaFile ./plugins/harpoon.lua;
+			# }
 
 			{
 				plugin = vim-astro;
