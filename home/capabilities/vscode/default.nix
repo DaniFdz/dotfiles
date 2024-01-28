@@ -19,6 +19,7 @@
 			arrterian.nix-env-selector
 			astro-build.astro-vscode
 			bradlc.vscode-tailwindcss
+			tal7aouy.icons
 		];
 		keybindings = [
 			{
@@ -50,6 +51,7 @@
 			"editor.fontLigatures" = true;
 			"editor.wordWrap" = "on";
 			"workbench.sideBar.location" = "left";
+			"workbench.iconTheme" = "icons";
 			"terminal.integrated.defaultProfile.linux" = "zsh";
 			"vim.useSystemClipboard" = true;
 			"vim.handleKeys" = {
