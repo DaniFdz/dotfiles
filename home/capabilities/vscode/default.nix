@@ -19,7 +19,7 @@
 			arrterian.nix-env-selector
 			astro-build.astro-vscode
 			bradlc.vscode-tailwindcss
-			tal7aouy.icons
+			# tal7aouy.icons
 		];
 		keybindings = [
 			{
