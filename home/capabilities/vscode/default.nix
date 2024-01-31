@@ -12,6 +12,7 @@
 			vscodevim.vim
 			mechatroner.rainbow-csv
 			ms-python.python
+			ms-python.black-formatter
 			eamodio.gitlens
 			github.copilot
 			github.copilot-chat
@@ -19,7 +20,7 @@
 			arrterian.nix-env-selector
 			astro-build.astro-vscode
 			bradlc.vscode-tailwindcss
-			# tal7aouy.icons
+			usernamehw.errorlens
 		];
 		keybindings = [
 			{
@@ -54,6 +55,9 @@
 			"workbench.iconTheme" = "icons";
 			"terminal.integrated.defaultProfile.linux" = "zsh";
 			"vim.useSystemClipboard" = true;
+			"[python]" = {
+				"editor.defaultFormatter" = "ms-python.black-formatter";
+			};
 			"vim.handleKeys" = {
 				"<C-w>" = false;
 				"<C-c>" = false;

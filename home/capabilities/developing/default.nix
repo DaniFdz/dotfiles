@@ -15,5 +15,7 @@
 		nodejs_21
 		corepack_21
 		bun
+
+		mongodb-compass
   ];
 }
