@@ -2,42 +2,36 @@
 
 {
   imports = [
-    ./hyprland
-		./dunst
-		./wofi
-		./webcord
+		./hyprland
+    ./dunst
+    ./webcord
   ];
 
-	home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
-	home.file.".config/waybar" = { source = ./waybar; recursive = true; };
+  home.file.".wallpapers" = { source = ./wallpapers; recursive = true; };
+  home.file.".config/waybar" = { source = ./waybar; recursive = true; };
 
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
+    neofetch
     gnome.nautilus
-    arandr
-		playerctl
-		swww
-		waybar
-		discord
-		globalprotect-openconnect
+    playerctl
+    swww
+    waybar
+    discord
+    globalprotect-openconnect
 
-		grim
-		slurp
-		imagemagick
-		swappy
-		brightnessctl
+    imagemagick
+    brightnessctl
 
-		obsidian
+    obsidian
   ];
 
   home.sessionVariables = {
     GTK_THEME = "Catppuccin-Macchiato-Compact-Teal-Dark";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
-    NIXOS_OZONE_WL = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
   };
 
-	  dconf.settings = {
+  dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       # gtk-theme = "Catppuccin-Frappe-Standard-Blue-light";
