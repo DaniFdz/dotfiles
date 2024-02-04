@@ -52,9 +52,11 @@
 			"editor.fontLigatures" = true;
 			"editor.wordWrap" = "on";
 			"workbench.sideBar.location" = "left";
-			"workbench.iconTheme" = "icons";
+			"workbench.productIconTheme" = "fluent-icons";
+			"workbench.iconTheme" = "symbols";
 			"terminal.integrated.defaultProfile.linux" = "zsh";
 			"vim.useSystemClipboard" = true;
+			"symbols.hidesExplorerArrows" = true;
 			"[python]" = {
 				"editor.defaultFormatter" = "ms-python.black-formatter";
 			};
