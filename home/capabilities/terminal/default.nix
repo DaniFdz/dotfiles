@@ -7,6 +7,7 @@
     unzip
     p7zip
     xclip
+    bc # Calculator
     lsd # Better ls
     sd # Better syntax for sed command
     fd # Better syntax for find command
