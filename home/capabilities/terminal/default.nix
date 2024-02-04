@@ -7,6 +7,7 @@
     unzip
     p7zip
     xclip
+		jq # JSON parser
     bc # Calculator
     lsd # Better ls
     sd # Better syntax for sed command
