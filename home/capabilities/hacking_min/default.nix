@@ -8,5 +8,6 @@
 		gobuster
 		john
 		whatweb
+		arp-scan
   ];
 }

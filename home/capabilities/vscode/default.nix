@@ -21,6 +21,7 @@
 			astro-build.astro-vscode
 			bradlc.vscode-tailwindcss
 			usernamehw.errorlens
+			ms-vscode-remote.remote-ssh
 		];
 		keybindings = [
 			{
