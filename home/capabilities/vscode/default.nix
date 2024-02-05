@@ -45,9 +45,9 @@
 		];
 		userSettings = {
 			"workbench.colorTheme" = "Tokyo Night";
-			"editor.fontSize" = 12;
-			"terminal.integrated.fontSize" = 11;
-			"window.zoomLevel" = -1;
+			"editor.fontSize" = 14;
+			"terminal.integrated.fontSize" = 13;
+			"window.zoomLevel" = 0;
 			"editor.fontFamily" = "FiraCode Nerd Font";
 			"terminal.integrated.fontFamily" = "FiraCode Nerd Font";
 			"editor.fontLigatures" = true;
