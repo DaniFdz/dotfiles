@@ -83,6 +83,8 @@
         "<C-k>" = false;
         "<C-t>" = false;
         "<C-i>" = false;
+        "<C-n>" = false;
+        "<C-p>" = false;
       };
     };
   };
