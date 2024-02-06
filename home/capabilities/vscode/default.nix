@@ -58,11 +58,14 @@
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "vim.useSystemClipboard" = true;
       "symbols.hidesExplorerArrows" = true;
+      "editor.formatOnSave" = false;
+      "eslint.format.enable" = true;
       "[typescript]" = {
         "editor.defaultFormatter" = "vscode.typescript-language-features";
       };
       "[typescriptreact]" = {
-        "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
+        # "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
+        "editor.defaultFormatter" = "ms-python.black-formatter";
       };
       "[python]" = {
         "editor.defaultFormatter" = "ms-python.black-formatter";
