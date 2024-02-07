@@ -16,6 +16,7 @@
 		corepack_20
 		bun
 
+		mysql80
 		mongodb-compass
   ];
 }
