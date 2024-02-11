@@ -22,6 +22,7 @@
       bradlc.vscode-tailwindcss
       usernamehw.errorlens
       ms-vscode-remote.remote-ssh
+			tamasfe.even-better-toml
     ];
     keybindings = [
       {
