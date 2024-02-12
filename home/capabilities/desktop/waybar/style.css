@@ -20,6 +20,7 @@ window#waybar {
 #custom-whatsapp,
 #custom-discord,
 #custom-chatgpt,
+#custom-notion,
 #custom-change_wallpaper,
 #battery,
 #network,
@@ -50,6 +51,9 @@ window#waybar {
 }
 #custom-discord{
 	background-color: @blue;
+}
+#custom-notion{
+	background-color: @text;
 }
 
 #custom-change_wallpaper{

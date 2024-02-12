@@ -8,7 +8,7 @@
 "margin-right":10,
 
 
-"modules-left": ["custom/browser","custom/chatgpt","custom/filemanager", "custom/whatsapp", "custom/discord"],
+"modules-left": ["custom/browser","custom/chatgpt","custom/filemanager", "custom/whatsapp", "custom/discord", "custom/notion"],
 "modules-center": ["hyprland/workspaces"],
 "modules-right":  ["tray", "network", "battery", "pulseaudio", "backlight", "custom/change_wallpaper", "clock"],
 
@@ -43,6 +43,13 @@
 "custom/discord": {
 	"format": "󰙯",
 	"on-click": "discord",
+	"tooltip": false
+},
+
+// Notion calendar
+"custom/notion": {
+	"format": "",
+	"on-click" : "brave --app=https://calendar.notion.so",
 	"tooltip": false
 },
 
