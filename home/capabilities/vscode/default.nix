@@ -62,11 +62,12 @@
       "editor.formatOnSave" = false;
       "eslint.format.enable" = true;
       "[typescript]" = {
-        "editor.defaultFormatter" = "vscode.typescript-language-features";
+        # "editor.defaultFormatter" = "vscode.typescript-language-features";
+        "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
       };
       "[typescriptreact]" = {
-        # "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
-        "editor.defaultFormatter" = "ms-python.black-formatter";
+        # "editor.defaultFormatter" = "vscode.typescript-language-features";
+        "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
       };
       "[python]" = {
         "editor.defaultFormatter" = "ms-python.black-formatter";
