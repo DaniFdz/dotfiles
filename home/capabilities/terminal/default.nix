@@ -7,6 +7,7 @@
     unzip
     p7zip
     xclip
+		zoxide # Better cd
 		jq # JSON parser
     bc # Calculator
     lsd # Better ls
@@ -76,6 +77,7 @@
       			export EDITOR="nvim"
 
       			if [ "$TMUX" = "" ]; then tmux; fi
+						eval "$(zoxide init zsh)"
     '';
 
     zplug = {

@@ -26,6 +26,7 @@
 
      # Enable nix flakes
     nix.package = pkgs.nixFlakes;
+		nixpkgs.config.allowUnfree = true;
     nix.extraOptions = ''
       experimental-features = nix-command flakes
     '';

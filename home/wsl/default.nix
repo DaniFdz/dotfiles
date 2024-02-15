@@ -5,7 +5,7 @@
     inputs.hyprland.homeManagerModules.default
     ../capabilities/git
     ../capabilities/scripts
-    ../capabilities/hacking_min
+    ../capabilities/hacking
     ../capabilities/terminal
     ../capabilities/nvim
     ../capabilities/tmux
@@ -21,7 +21,6 @@
     stateVersion = "23.11";
     packages = with pkgs; [
       docker-compose
-			tshark
     ];
   };
 
