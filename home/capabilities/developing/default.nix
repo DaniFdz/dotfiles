@@ -2,14 +2,19 @@
 
 {
   home.packages = with pkgs; [
+		shellcheck
+
 		python311
 		python311Packages.pip
 		python311Packages.virtualenv
 		poetry
 
+		rustc
 		cargo
 		cargo-generate
-		rustc
+		rustfmt
+		rust-analyzer
+
 		gcc
 
 		nodejs_20
@@ -18,5 +23,6 @@
 
 		mysql80
 		mongodb-compass
+		redis
   ];
 }

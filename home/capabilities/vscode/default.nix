@@ -24,6 +24,12 @@
       ms-vscode-remote.remote-ssh
       tamasfe.even-better-toml
       dbaeumer.vscode-eslint
+			rust-lang.rust-analyzer
+			tamasfe.even-better-toml
+			foxundermoon.shell-format
+			# miguelsolorio.min-theme
+			# miguelsolorio.fluent-icons
+			# miguelsolorio.symbols
     ];
     keybindings = [
       {
@@ -46,7 +52,7 @@
       }
     ];
     userSettings = {
-      "workbench.colorTheme" = "Tokyo Night";
+      "workbench.colorTheme" = "Min Dark";
       "editor.fontSize" = 14;
       "terminal.integrated.fontSize" = 13;
       "window.zoomLevel" = 0;
