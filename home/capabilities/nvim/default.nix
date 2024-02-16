@@ -105,10 +105,6 @@
         config = toLuaFile ./plugins/lualine.lua;
       }
 
-      {
-        plugin = rust-tools-nvim;
-        config = toLuaFile ./plugins/rust-tools.lua;
-      }
 
       {
         plugin = vimtex;

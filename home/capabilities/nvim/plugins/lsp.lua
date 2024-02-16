@@ -99,6 +99,11 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+lspconfig.rust_analyzer.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lspconfig.rnix.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
