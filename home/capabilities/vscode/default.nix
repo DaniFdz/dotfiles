@@ -24,12 +24,16 @@
       ms-vscode-remote.remote-ssh
       tamasfe.even-better-toml
       dbaeumer.vscode-eslint
-			rust-lang.rust-analyzer
-			tamasfe.even-better-toml
-			foxundermoon.shell-format
-			# miguelsolorio.min-theme
-			# miguelsolorio.fluent-icons
-			# miguelsolorio.symbols
+      rust-lang.rust-analyzer
+      tamasfe.even-better-toml
+      vadimcn.vscode-lldb
+      foxundermoon.shell-format
+      gruntfuggly.todo-tree
+      serayuzgur.crates
+      skellock.just
+      # miguelsolorio.min-theme
+      # miguelsolorio.fluent-icons
+      # miguelsolorio.symbols
     ];
     keybindings = [
       {
@@ -68,6 +72,7 @@
       "symbols.hidesExplorerArrows" = true;
       "editor.formatOnSave" = false;
       "eslint.format.enable" = true;
+      "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!";
       "[typescript]" = {
         # "editor.defaultFormatter" = "vscode.typescript-language-features";
         "editor.defaultFormatter" = "dbaeumer.vscode-eslint";
@@ -78,6 +83,9 @@
       };
       "[python]" = {
         "editor.defaultFormatter" = "ms-python.black-formatter";
+      };
+      "[rust]" = {
+        "editor.defaultFormatter" = "rust-lang.rust-analyzer";
       };
       "vim.handleKeys" = {
         "<C-w>" = false;

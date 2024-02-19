@@ -6,14 +6,20 @@
 
 		python311
 		python311Packages.pip
+		python311Packages.mypy
+		python311Packages.flake8
+		python311Packages.black
 		python311Packages.virtualenv
 		poetry
 
 		rustc
 		cargo
 		cargo-generate
+		cargo-watch
+		cargo-audit
 		rustfmt
 		rust-analyzer
+		clippy
 
 		gcc
 
