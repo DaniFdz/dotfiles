@@ -49,6 +49,10 @@
       tb = "nc termbin.com 9999";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=x11 &>/dev/null";
       n = "nvim";
+			b = "bun";
+			bx = "bunx";
+			p = "pnpm";
+			px = "pnpx";
     };
     envExtra = ''
             [[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh
