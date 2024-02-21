@@ -31,6 +31,7 @@
       gruntfuggly.todo-tree
       serayuzgur.crates
       skellock.just
+			ms-dotnettools.csharp
       # miguelsolorio.min-theme
       # miguelsolorio.fluent-icons
       # miguelsolorio.symbols

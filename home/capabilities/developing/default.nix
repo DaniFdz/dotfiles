@@ -23,6 +23,9 @@
 
 		gcc
 
+		dotnet-sdk_8
+		dotnetPackages.Nuget
+
 		nodejs_20
 		corepack_20
 		bun
