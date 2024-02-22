@@ -33,6 +33,7 @@
       skellock.just
 			ms-dotnettools.csharp
 			wakatime.vscode-wakatime
+			bbenoist.nix
       # miguelsolorio.min-theme
       # miguelsolorio.fluent-icons
       # miguelsolorio.symbols
