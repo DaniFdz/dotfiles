@@ -31,12 +31,34 @@
       gruntfuggly.todo-tree
       serayuzgur.crates
       skellock.just
-			ms-dotnettools.csharp
-			wakatime.vscode-wakatime
-			bbenoist.nix
-      # miguelsolorio.min-theme
-      # miguelsolorio.fluent-icons
-      # miguelsolorio.symbols
+      wakatime.vscode-wakatime
+      bbenoist.nix
+      editorconfig.editorconfig
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "min-theme";
+        publisher = "miguelsolorio";
+        version = "1.5.0";
+        sha256 = "DF/9OlWmjmnZNRBs2hk0qEWN38RcgacdVl9e75N8ZMY=";
+      }
+      {
+        name = "fluent-icons";
+        publisher = "miguelsolorio";
+        version = "0.0.18";
+        sha256 = "sE0A441QPwokBoLoCqtImDHmlAXd66fj8zsJR7Ci+Qs=";
+      }
+      {
+        name = "symbols";
+        publisher = "miguelsolorio";
+        version = "0.0.16";
+        sha256 = "LGCeqleDGWveJ7KPYd6+ArynEpET4xrhvI2H4NPuCtQ=";
+      }
+      {
+        name = "vscode-rapidapi-client";
+        publisher = "rapidapi";
+        version = "1.10.2";
+        sha256 = "29YRvX5aPUQ0wiLnGq4TYpsMS6WDLnXh0hgsIsnPX00=";
+      }
     ];
     keybindings = [
       {
