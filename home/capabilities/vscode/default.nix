@@ -32,6 +32,7 @@
       serayuzgur.crates
       skellock.just
 			ms-dotnettools.csharp
+			wakatime.vscode-wakatime
       # miguelsolorio.min-theme
       # miguelsolorio.fluent-icons
       # miguelsolorio.symbols
