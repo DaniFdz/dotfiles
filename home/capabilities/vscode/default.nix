@@ -34,7 +34,16 @@
       wakatime.vscode-wakatime
       bbenoist.nix
       editorconfig.editorconfig
+			ms-vscode.makefile-tools
+			xaver.clang-format
+			ms-vscode.cpptools
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+			{
+				name = "cpptools-extension-pack";
+				publisher = "ms-vscode";
+				version = "1.3.0";
+				sha256 = "rHST7CYCVins3fqXC+FYiS5Xgcjmi7QW7M4yFrUR04U=";
+			}
       {
         name = "min-theme";
         publisher = "miguelsolorio";

@@ -2,36 +2,38 @@
 
 {
   home.packages = with pkgs; [
-		shellcheck
+    shellcheck
 
-		python311
-		python311Packages.pip
-		python311Packages.mypy
-		python311Packages.flake8
-		python311Packages.black
-		python311Packages.virtualenv
-		poetry
+    python311
+    python311Packages.pip
+    python311Packages.mypy
+    python311Packages.flake8
+    python311Packages.black
+    python311Packages.virtualenv
+    poetry
 
-		rustc
-		cargo
-		cargo-generate
-		cargo-watch
-		cargo-audit
-		rustfmt
-		rust-analyzer
-		clippy
+    rustc
+    cargo
+    cargo-generate
+    cargo-watch
+    cargo-audit
+    rustfmt
+    rust-analyzer
+    clippy
 
-		gcc
+    gcc
+    gnumake
+    cmake
 
-		dotnet-sdk_8
-		dotnetPackages.Nuget
+    dotnet-sdk_8
+    dotnetPackages.Nuget
 
-		nodejs_20
-		corepack_20
-		bun
+    nodejs_20
+    corepack_20
+    bun
 
-		mysql80
-		mongodb-compass
-		redis
+    mysql80
+    mongodb-compass
+    redis
   ];
 }
