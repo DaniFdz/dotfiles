@@ -37,6 +37,8 @@
 			ms-vscode.makefile-tools
 			xaver.clang-format
 			ms-vscode.cpptools
+			johnpapa.vscode-peacock
+			ms-vsliveshare.vsliveshare
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 			{
 				name = "cpptools-extension-pack";
