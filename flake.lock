@@ -56,6 +56,23 @@
         "type": "github"
       }
     },
+    "harpoon2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706306053,
+        "narHash": "sha256-RjwNUuKQpLkRBX3F9o25Vqvpu3Ah1TCFQ5Dk4jXhsbI=",
+        "owner": "ThePrimeagen",
+        "repo": "harpoon",
+        "rev": "a38be6e0dd4c6db66997deab71fc4453ace97f9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "ref": "harpoon2",
+        "repo": "harpoon",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -224,6 +241,7 @@
     "root": {
       "inputs": {
         "NixOS-WSL": "NixOS-WSL",
+        "harpoon2": "harpoon2",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "minegrub": "minegrub",

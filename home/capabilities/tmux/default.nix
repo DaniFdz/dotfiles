@@ -9,6 +9,7 @@
     shortcut = "a";
     mouse = true;
     keyMode = "vi";
+		escapeTime = 10;
     plugins = with pkgs.tmuxPlugins; [
       # List available plugins: nix-env -f '<nixpkgs>' -qaP -A tmuxPlugins
       vim-tmux-navigator

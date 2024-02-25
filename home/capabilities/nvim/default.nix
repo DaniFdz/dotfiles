@@ -56,6 +56,10 @@
             name = "telescope-emoji";
             src = inputs.telescope-emoji;
           };
+          harpoon2 = pkgs.vimUtils.buildVimPlugin {
+            name = "harpoon2";
+            src = inputs.harpoon2;
+          };
         in
         [
           # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
@@ -193,6 +197,11 @@
           }
 
           vim-wakatime
+
+					{
+						plugin = harpoon2;
+						config = toLuaFile ./plugins/harpoon.lua;
+					}
 
         ];
     };

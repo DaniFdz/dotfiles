@@ -1,5 +1,5 @@
 {
-  description = "Dani Fdz's Dotfiles";
+  description = "DaniFdz's Dotfiles";
 
   nixConfig.experimental-features = [ "nix-command" "flakes" ];
 
@@ -31,6 +31,11 @@
 		none-ls = {
 			flake = false;
 			url = "github:nvimtools/none-ls.nvim";
+		};
+
+		harpoon2 = {
+			flake = false;
+			url = "github:ThePrimeagen/harpoon/harpoon2";
 		};
 
 		telescope-emoji = {

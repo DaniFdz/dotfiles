@@ -16,7 +16,7 @@ vim.o.mouse = 'a'
 -- vim.o.signcolumn = 'no'
 
 -- Concealer for Neorg
-vim.o.conceallevel=2
+vim.o.conceallevel = 2
 
 -- Save undo history
 vim.o.undofile = true
