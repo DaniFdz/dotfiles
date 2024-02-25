@@ -158,6 +158,22 @@
         "type": "github"
       }
     },
+    "minihipatterns": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707650664,
+        "narHash": "sha256-LQviyWJ6b9d/swswRxznBaHaTacYu5m0E7P9rDniNAg=",
+        "owner": "echasnovski",
+        "repo": "mini.hipatterns",
+        "rev": "0a72439dbded766af753a3e7ec0a5b21d0f8ada0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "repo": "mini.hipatterns",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1700612854,
@@ -245,6 +261,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "minegrub": "minegrub",
+        "minihipatterns": "minihipatterns",
         "nixpkgs": "nixpkgs_3",
         "none-ls": "none-ls",
         "obsidian": "obsidian",

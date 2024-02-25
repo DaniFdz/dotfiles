@@ -60,6 +60,10 @@
             name = "harpoon2";
             src = inputs.harpoon2;
           };
+          minihipatterns = pkgs.vimUtils.buildVimPlugin {
+            name = "minihipatterns";
+            src = inputs.minihipatterns;
+          };
         in
         [
           # Look for packages: nix-env -f '<nixpkgs>' -qaP -A vimPlugins
@@ -198,11 +202,15 @@
 
           vim-wakatime
 
-					{
-						plugin = harpoon2;
-						config = toLuaFile ./plugins/harpoon.lua;
-					}
+          {
+            plugin = harpoon2;
+            config = toLuaFile ./plugins/harpoon.lua;
+          }
 
+          {
+            plugin = minihipatterns;
+            config = toLua "require('mini.hipatterns').setup()";
+          }
         ];
     };
 }

@@ -42,6 +42,11 @@
 			flake = false;
 			url = "github:xiyaowong/telescope-emoji.nvim";
 		};
+
+		minihipatterns = {
+			flake = false;
+			url = "github:echasnovski/mini.hipatterns";
+		};
   };
 
   outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:
