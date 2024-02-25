@@ -23,7 +23,7 @@ export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
 Rebuild system with specific configurations:
 ```bash
-sudo nixos-rebuild switch --flake github:DaniFdz/dotfiles#gnome
+sudo nixos-rebuild switch --flake github:DaniFdz/dotfiles#pc
 ```
 
 ## For wsl NixOS
