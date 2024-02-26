@@ -47,5 +47,5 @@ vim.keymap.set("n", "<leader>hn", function() require("harpoon"):list():next() en
 vim.keymap.set("n", "<leader>hp", function() require("harpoon"):list():prev() end)
 -- Go to a custom harpoon entry
 for i = 1, 9 do
-	vim.keymap.set("n", "<leader>" .. i, function() require("harpoon"):list():select(i) end)
+	vim.keymap.set("n", "<leader>h" .. i, function() require("harpoon"):list():select(i) end)
 end
