@@ -49,6 +49,7 @@
       tb = "nc termbin.com 9999";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=x11 &>/dev/null";
       n = "nvim";
+			v = "nvim";
 			b = "bun";
 			bx = "bunx";
 			p = "pnpm";
