@@ -24,6 +24,7 @@
     gcc
     gnumake
     cmake
+		llvmPackages_9.clang-unwrapped
 
     dotnet-sdk_8
     dotnetPackages.Nuget
