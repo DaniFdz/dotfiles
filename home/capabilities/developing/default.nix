@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    libreoffice
+
     shellcheck
 
     python311
@@ -24,7 +26,7 @@
     gcc
     gnumake
     cmake
-		llvmPackages_9.clang-unwrapped
+    llvmPackages_9.clang-unwrapped
 
     dotnet-sdk_8
     dotnetPackages.Nuget
