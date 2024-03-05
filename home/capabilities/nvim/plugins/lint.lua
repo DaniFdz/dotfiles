@@ -21,6 +21,7 @@ null_ls.setup({
 
 		-- Rust
 		b.formatting.rustfmt,
+		b.diagnostics.rust_analyzer,
 
 		-- Docker
 		b.diagnostics.hadolint,
