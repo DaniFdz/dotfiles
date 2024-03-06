@@ -45,6 +45,12 @@
       ms-vscode.cpptools
       twxs.cmake
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+			{
+				name = "es7-react-js-snippets";
+				publisher = "dsznajder";
+				version = "4.4.3";
+				sha256 = "QF950JhvVIathAygva3wwUOzBLjBm7HE3Sgcp7f20Pc=";
+			}
       {
         name = "cpptools-extension-pack";
         publisher = "ms-vscode";
