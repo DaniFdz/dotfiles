@@ -7,8 +7,8 @@
     unzip
     p7zip
     xclip
-		zoxide # Better cd
-		jq # JSON parser
+    zoxide # Better cd
+    jq # JSON parser
     bc # Calculator
     lsd # Better ls
     sd # Better syntax for sed command
@@ -49,40 +49,42 @@
       tb = "nc termbin.com 9999";
       code = "code --enable-features=UseOzonePlatform --ozone-platform=x11 &>/dev/null";
       n = "nvim";
-			v = "nvim";
-			b = "bun";
-			bx = "bunx";
-			p = "pnpm";
-			px = "pnpx";
+      v = "nvim";
+      b = "bun";
+      bx = "bunx";
+      p = "pnpm";
+      px = "pnpx";
     };
     envExtra = ''
-            [[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh
-            [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+                  [[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh
+                  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-            # configure key keybindings
-            bindkey -e                                        # emacs key bindings
-            bindkey ' ' magic-space                           # do history expansion on space
-            bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-            bindkey '^[[3~' delete-char                       # delete
-            bindkey '^[[1;5C' forward-word                    # ctrl + ->
-            bindkey '^[[1;5D' backward-word                   # ctrl + <-
-            bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-            bindkey '^[[6~' end-of-buffer-or-history          # page down
-            bindkey '^[[H' beginning-of-line                  # home
-            bindkey '^[[F' end-of-line                        # end
-            bindkey '^[[Z' undo
-            bindkey '[C' forward-word
-            bindkey '[D' backward-word
-            bindkey '^H' backward-kill-word
-            bindkey "\e[3;5~" kill-word
-            bindkey "\e[3~" delete-char
-            bindkey "\e[H"  beginning-of-line
-            bindkey "\e[F"  end-of-line
+                  # configure key keybindings
+                  bindkey -e                                        # emacs key bindings
+                  bindkey ' ' magic-space                           # do history expansion on space
+                  bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+                  bindkey '^[[3~' delete-char                       # delete
+                  bindkey '^[[1;5C' forward-word                    # ctrl + ->
+                  bindkey '^[[1;5D' backward-word                   # ctrl + <-
+                  bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+                  bindkey '^[[6~' end-of-buffer-or-history          # page down
+                  bindkey '^[[H' beginning-of-line                  # home
+                  bindkey '^[[F' end-of-line                        # end
+                  bindkey '^[[Z' undo
+                  bindkey '[C' forward-word
+                  bindkey '[D' backward-word
+                  bindkey '^H' backward-kill-word
+                  bindkey "\e[3;5~" kill-word
+                  bindkey "\e[3~" delete-char
+                  bindkey "\e[H"  beginning-of-line
+                  bindkey "\e[F"  end-of-line
 
-      			export EDITOR="nvim"
+            			export EDITOR="nvim"
 
-      			if [ "$TMUX" = "" ]; then tmux; fi
-						eval "$(zoxide init zsh)"
+      						if [ "$BROWSER" = "" ]; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
+
+            			if [ "$TMUX" = "" ]; then tmux; fi
+      						eval "$(zoxide init zsh)"
     '';
 
     zplug = {
@@ -117,7 +119,7 @@
     };
   };
 
-	home.file.".gitconfig".text = ''# https://dandavison.github.io/delta/introduction.html
+  home.file.".gitconfig".text = ''# https://dandavison.github.io/delta/introduction.html
 [core]
     pager = delta
 [interactive]

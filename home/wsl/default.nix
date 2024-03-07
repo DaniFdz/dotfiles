@@ -1,4 +1,4 @@
-{ inputs, config, pkgs,  ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -9,14 +9,14 @@
     ../capabilities/terminal
     ../capabilities/nvim
     ../capabilities/tmux
-		../capabilities/developing
+    ../capabilities/developing
   ];
 
   fonts.fontconfig.enable = true;
 
   home = {
     username = "dani";
-    homeDirectory = "/home/dani"; 
+    homeDirectory = "/home/dani";
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "23.11";
     packages = with pkgs; [
