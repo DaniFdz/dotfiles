@@ -19,6 +19,7 @@
     cargo-generate
     cargo-watch
     cargo-audit
+		cargo-profiler
     rustfmt
     rust-analyzer
     clippy
@@ -26,6 +27,7 @@
     gcc
     gnumake
     cmake
+		valgrind
     llvmPackages_9.clang-unwrapped
 
     dotnet-sdk_8
