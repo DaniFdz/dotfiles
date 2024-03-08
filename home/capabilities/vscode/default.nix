@@ -46,6 +46,11 @@
       twxs.cmake
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 			{
+				name = "emoji-snippets";
+				publisher = "devzstudio";
+				version = "1.5.3";
+			}
+			{
 				name = "es7-react-js-snippets";
 				publisher = "dsznajder";
 				version = "4.4.3";
