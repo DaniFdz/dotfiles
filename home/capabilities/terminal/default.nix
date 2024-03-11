@@ -55,7 +55,7 @@
       p = "pnpm";
       px = "pnpx";
     };
-    envExtra = ''
+    initExtra = ''
       			[[ ! -f /home/dani/.p10k.zsh ]] || source ~/.p10k.zsh
       			[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -82,7 +82,12 @@
       			export EDITOR="nvim"
 						PATH=$PATH:$HOME/.cargo/bin
 
-      			if [ "$BROWSER" = "" ]; then export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"; fi
+						if [ -f "/etc/wsl.conf" ]; then
+							export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe";
+						else
+							export BROWSER="brave";
+						fi
+
 
       			if [ "$TMUX" = "" ]; then tmux; fi
       					eval "$(zoxide init zsh)"
