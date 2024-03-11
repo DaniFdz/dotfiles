@@ -20,7 +20,7 @@ font:
   bold_italic:
     family: "FiraCode Nerd Font"
     style: Bold Italic
-  size: 8.0
+  size: 9.0
 
 window:
   opacity:
