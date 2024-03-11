@@ -49,6 +49,7 @@
 				name = "emoji-snippets";
 				publisher = "devzstudio";
 				version = "1.5.3";
+				sha256 = "e0plxt4eSfhXxExpwb885mD+oSQ62Mzua37HxlvR7KA=";
 			}
 			{
 				name = "es7-react-js-snippets";
