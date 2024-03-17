@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     libreoffice
 
+		watchexec
+
     shellcheck
 
     python311
@@ -36,6 +38,9 @@
     nodejs_20
     corepack_20
     bun
+
+		jdk
+		jetbrains.idea-ultimate
 
     mysql80
     mongodb-compass
