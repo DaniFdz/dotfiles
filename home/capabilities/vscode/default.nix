@@ -46,6 +46,12 @@
       twxs.cmake
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 			{
+				name = "console-ninja";
+				publisher = "wallabyjs";
+				version = "1.0.303";
+				sha256 = "p+XGnDvsOjC3w3C32KqtQN7t2WDkCQadWghDLW+tMdU=";
+			}
+			{
 				name = "emoji-snippets";
 				publisher = "devzstudio";
 				version = "1.5.3";
