@@ -46,5 +46,7 @@
     mysql80
     mongodb-compass
     redis
+
+		wrangler_1
   ];
 }

@@ -80,7 +80,8 @@
       			bindkey "\e[F"  end-of-line
 
       			export EDITOR="nvim"
-						PATH=$PATH:$HOME/.cargo/bin
+						export PATH=$PATH:$HOME/.cargo/bin
+						export PATH=$PATH:$HOME/.local/bin
 
 						if [ -f "/etc/wsl.conf" ]; then
 							export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe";
