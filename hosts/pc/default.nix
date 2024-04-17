@@ -6,21 +6,27 @@
       ./hardware-configuration.nix
     ];
   # Bootloader.
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    devices = ["nodev"];
-    efiSupport = true;
-    useOSProber = true;
-		minegrub-theme = {
-			enable = true;
-			splash = "100% Flakes!";
+  boot.loader = {
+		efi = {
+			canTouchEfiVariables = true;
 		};
-		extraConfig = ''
-			# Disable grub timeout to speed up booting.
-			set timeout=10
-			'';
-  };
+		grub = {
+			enable = true;
+			devices = ["nodev"];
+			efiSupport = true;
+			useOSProber = true;
+			minegrub-theme = {
+				enable = true;
+				splash = "100% Flakes!";
+			};
+			extraConfig = ''
+				# Disable grub timeout to speed up booting.
+				set timeout=10
+				# Set default boot entry to the entry number 2.
+				set default=2
+				'';
+		};
+	};
 
   time.hardwareClockInLocalTime = true;
 
