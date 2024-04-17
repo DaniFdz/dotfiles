@@ -34,10 +34,6 @@
       cat = "bat -P --theme=Dracula";
       catl = "bat --theme=Dracula";
       catn = "/run/current-system/sw/bin/cat";
-      get-my-ip = "echo (ifconfig | grep 'inet ' | awk '{print 2}' | grep -v '127.0.0.1')";
-      cc = "wl-copy";
-      my-ip = "get-my-ip && get-my-ip | cc";
-      pwd = "pwd && pwd | cc";
       python = "python3";
       py = "python3";
       ga = "git add";
@@ -85,8 +81,12 @@
 
 						if [ -f "/etc/wsl.conf" ]; then
 							export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe";
+
+							alias cc="clip.exe";
 						else
 							export BROWSER="brave";
+
+							alias cc="wl-copy"
 						fi
 
 
