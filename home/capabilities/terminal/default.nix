@@ -78,6 +78,11 @@
       			export EDITOR="nvim"
 						export PATH=$PATH:$HOME/.cargo/bin
 						export PATH=$PATH:$HOME/.local/bin
+						export PATH=$PATH:$HOME/.mutable_node_modules/bin
+
+						if [ ! -d "$HOME/.mutable_node_modules" ]; then
+							npm config set prefix '~/mutable_node_modules'
+						fi
 
 						if [ -f "/etc/wsl.conf" ]; then
 							export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe";
