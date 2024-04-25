@@ -48,5 +48,6 @@
     redis
 
 		wrangler_1
+		turso-cli
   ];
 }
