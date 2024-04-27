@@ -123,6 +123,7 @@
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.wordWrap" = "on";
+			"explorer.compactFolders" = false;
       "workbench.sideBar.location" = "left";
       "workbench.productIconTheme" = "fluent-icons";
       "workbench.iconTheme" = "symbols";
