@@ -40,6 +40,8 @@
       gc = "git commit";
       gp = "git push";
       gl = "git pull";
+			gr = "git restore";
+			gcl	= "git clone";
       pdw = "pwd";
       naut = "nautilus";
       tb = "nc termbin.com 9999";
