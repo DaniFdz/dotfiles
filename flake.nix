@@ -19,40 +19,43 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+
     hyprland.url = "github:hyprwm/Hyprland";
 
-		minegrub.url = "github:Lxtharia/minegrub-theme";
+    minegrub.url = "github:Lxtharia/minegrub-theme";
 
-		obsidian = {
-			flake = false;
-			url = "github:epwalsh/obsidian.nvim";
-		};
+    obsidian = {
+      flake = false;
+      url = "github:epwalsh/obsidian.nvim";
+    };
 
-		none-ls = {
-			flake = false;
-			url = "github:nvimtools/none-ls.nvim";
-		};
+    none-ls = {
+      flake = false;
+      url = "github:nvimtools/none-ls.nvim";
+    };
 
-		harpoon2 = {
-			flake = false;
-			url = "github:ThePrimeagen/harpoon/harpoon2";
-		};
+    harpoon2 = {
+      flake = false;
+      url = "github:ThePrimeagen/harpoon/harpoon2";
+    };
 
-		telescope-emoji = {
-			flake = false;
-			url = "github:xiyaowong/telescope-emoji.nvim";
-		};
+    telescope-emoji = {
+      flake = false;
+      url = "github:xiyaowong/telescope-emoji.nvim";
+    };
 
-		minihipatterns = {
-			flake = false;
-			url = "github:echasnovski/mini.hipatterns";
-		};
+    minihipatterns = {
+      flake = false;
+      url = "github:echasnovski/mini.hipatterns";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, NixOS-WSL, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, NixOS-WSL, vscode-server, ... }@inputs:
     let
       inherit (self) outputs;
-    in {
+    in
+    {
       nixosConfigurations = {
         # By default, NixOS will try to refer the nixosConfiguration with its hostname.
         # so the system named `nixos-test` will use this configuration.
@@ -61,12 +64,12 @@
         # Run `sudo nixos-rebuild switch --flake .#nixos-test` in the flake's directory to deploy this configuration on any NixOS system  
         vm = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
+          specialArgs = { inherit inputs outputs; }; # pass custom arguments into sub module.
           modules = [
             ./hosts/vm
-						inputs.hyprland.nixosModules.default
-						{ programs.hyprland.enable = true; }
-						inputs.minegrub.nixosModules.default
+            inputs.hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            inputs.minegrub.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -78,12 +81,12 @@
         };
         pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
+          specialArgs = { inherit inputs outputs; }; # pass custom arguments into sub module.
           modules = [
             ./hosts/pc
-						inputs.hyprland.nixosModules.default
-						{ programs.hyprland.enable = true; }
-						inputs.minegrub.nixosModules.default
+            inputs.hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            inputs.minegrub.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -95,12 +98,12 @@
         };
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };  # pass custom arguments into sub module.
+          specialArgs = { inherit inputs outputs; }; # pass custom arguments into sub module.
           modules = [
             ./hosts/laptop
-						inputs.hyprland.nixosModules.default
-						{ programs.hyprland.enable = true; }
-						inputs.minegrub.nixosModules.default
+            inputs.hyprland.nixosModules.default
+            { programs.hyprland.enable = true; }
+            inputs.minegrub.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -114,9 +117,13 @@
           system = "x86_64-linux";
           modules = [
             { nix.registry.nixpkgs.flake = nixpkgs; }
-            ./hosts/wsl
             NixOS-WSL.nixosModules.wsl
             home-manager.nixosModules.home-manager
+            vscode-server.nixosModules.default
+            ({ config, pkgs, ... }: {
+              services.vscode-server.enable = true;
+            })
+            ./hosts/wsl
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
