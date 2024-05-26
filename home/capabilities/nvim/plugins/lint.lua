@@ -17,7 +17,6 @@ null_ls.setup({
 
 		-- Lua
 		b.diagnostics.luacheck,
-		b.formatting.stylelua,
 
 		-- Rust
 		b.formatting.rustfmt,
