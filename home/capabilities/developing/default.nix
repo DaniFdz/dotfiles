@@ -49,5 +49,7 @@
 
 		wrangler_1
 		turso-cli
+
+		go
   ];
 }

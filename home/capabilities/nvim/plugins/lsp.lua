@@ -2,6 +2,7 @@ vim.g.leader = " "
 vim.g.mapleader = " "
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+local util = require("lspconfig.util")
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
@@ -119,3 +120,22 @@ lspconfig.rnix.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.gopls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+				unusedvariable = true,
+
+			},
+		},
+	},
+})
+

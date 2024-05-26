@@ -33,6 +33,11 @@ null_ls.setup({
 		b.formatting.nixfmt,
 		b.diagnostics.statix,
 		b.code_actions.statix,
+
+		-- Go
+		b.formatting.gofumpt,
+		b.formatting.goimports_reviser,
+		b.formatting.golines
 	},
 })
 

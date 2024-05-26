@@ -36,6 +36,7 @@
         deadnix
         nixfmt
         statix
+				gopls
       ];
 
       extraLuaConfig = ''
