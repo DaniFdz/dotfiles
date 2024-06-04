@@ -76,11 +76,14 @@
       			bindkey "\e[3~" delete-char
       			bindkey "\e[H"  beginning-of-line
       			bindkey "\e[F"  end-of-line
+						bindkey -s ^f "tmux-sessionizer.sh\n"
 
       			export EDITOR="nvim"
 						export PATH=$PATH:$HOME/.cargo/bin
 						export PATH=$PATH:$HOME/.local/bin
+						export PATH=$PATH:$HOME/.config/scripts
 						export PATH=$PATH:$HOME/.mutable_node_modules/bin
+
 
 						if [ ! -d "$HOME/.mutable_node_modules" ]; then
 							npm config set prefix '~/mutable_node_modules'
@@ -96,9 +99,7 @@
 							alias cc="wl-copy"
 						fi
 
-
-      			if [ "$TMUX" = "" ]; then tmux; fi
-      					eval "$(zoxide init zsh)"
+						eval "$(zoxide init zsh)"
     '';
 
     zplug = {
