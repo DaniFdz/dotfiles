@@ -160,15 +160,6 @@
 
           plenary-nvim
           {
-            plugin = neorg;
-            config = toLuaFile ./plugins/neorg.lua;
-          }
-          {
-            plugin = obsidian;
-            config = toLuaFile ./plugins/obsidian.lua;
-          }
-
-          {
             plugin = nvim-cursorline;
             config = toLuaFile ./plugins/cursorline.lua;
           }
