@@ -1,0 +1,45 @@
+# Aliases
+alias cc=pbcopy
+alias n=nvim
+alias py=python3
+alias ll="lsd -lh --group-dirs=first"
+alias la="lsd -a --group-dirs=first"
+alias l="lsd --group-dirs=first"
+alias lla="lsd -lha --group-dirs=first"
+alias ls="lsd --group-dirs=first"
+alias cat="bat -P --theme=Dracula"
+alias catl="bat --theme=Dracula"
+alias catn="/run/current-system/sw/bin/cat"
+alias python=python3
+alias py=python3
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias gr="git restore"
+alias gcl="git clone"
+alias pdw=pwd
+alias naut=nautilus
+alias tb="nc termbin.com 9999"
+alias n=nvim
+alias v=nvim
+alias b=bun
+alias bx=bunx
+alias p=pnpm
+alias px=pnpx
+
+# Functions
+unalias gpu
+function gpu() {
+    git push -u origin $(git branch | awk '/^\* / { print $2 }')
+}
+
+unalias gcb
+function gcb() {
+    git checkout -b $USER/$1
+}
+
+function openpr() {
+    local BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    open https://github.com/DataDog/web-ui/compare/preprod...$BRANCH
+}
