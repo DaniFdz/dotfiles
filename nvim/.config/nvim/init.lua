@@ -1,1 +1,2 @@
-require("lua.config.lazy")
+require("options")
+require("config.lazy")
