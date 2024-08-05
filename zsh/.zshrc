@@ -19,7 +19,6 @@ plugins=(
 	bazel
 	brew
 	docker
-	fd
 	fzf
 	git
 	git-auto-fetch
@@ -115,6 +114,8 @@ export PATH="$PATH:$DATADOG_ROOT/devtools/bin"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+source $HOME/.dd_aliases
 
 PATH=~/.console-ninja/.bin:$PATH
 
