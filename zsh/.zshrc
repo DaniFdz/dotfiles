@@ -18,6 +18,7 @@ plugins=(
 	aliases
 	bazel
 	brew
+    direnv
 	docker
 	fzf
 	git
@@ -119,6 +120,8 @@ source $HOME/.dd_aliases
 
 PATH=~/.console-ninja/.bin:$PATH
 
+PKG_CONFIG_PATH=/opt/homebrew/opt/openssl@3.3/lib/pkgconfig
+
 ###################
 # Personal Config #
 ###################
@@ -157,3 +160,10 @@ export PATH=$PATH:$HOME/.config/scripts
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 source ~/.zsh_aliases
+
+# bun completions
+[ -s "/Users/dani.fernandez/.bun/_bun" ] && source "/Users/dani.fernandez/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
