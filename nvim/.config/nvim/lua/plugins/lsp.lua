@@ -6,6 +6,18 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
   },
+  settings = {
+    typescript = {
+        tsserver = {
+          log = "off",
+          maxTsServerMemory = 12000,
+          watchOptions = {
+            excludeDirectories = { "**/node_modules", "**/.yarn" },
+            excludeFiles = { ".pnp.cjs" },
+          },
+        },
+      },
+  },
   config = function()
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -76,7 +88,7 @@ return {
             filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro" },
         })
 
-        lspconfig.tsserver.setup({
+        lspconfig.ts_ls.setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })
