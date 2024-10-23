@@ -3,7 +3,7 @@ return {
   opts = {
     servers = {
       vtsls = {
-        root_dir = require("lspconfig").util.root_pattern("package.json"),
+        root_dir = require("lspconfig").util.root_pattern(".git"),
         settings = {
           vtsls = {
             autoUseWorkspaceTsdk = true,
