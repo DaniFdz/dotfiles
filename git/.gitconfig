@@ -2,8 +2,8 @@
 	hooksPath = /usr/local/dd/global_hooks
 
 [user]
-  email = dani.fernandez@datadoghq.com
-  name = DaniFdz
+	email = dani.fernandez@datadoghq.com
+	name = DaniFdz
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/

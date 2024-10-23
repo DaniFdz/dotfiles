@@ -46,4 +46,7 @@ return {
     end,
   },
   { "akinsho/git-conflict.nvim", version = "*", config = true },
+  {
+    "almo7aya/openingh.nvim",
+  },
 }

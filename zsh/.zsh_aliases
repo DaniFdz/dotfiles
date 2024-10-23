@@ -27,6 +27,8 @@ alias b=bun
 alias bx=bunx
 alias p=pnpm
 alias px=pnpx
+alias y=yarn
+alias yyd="yarn && yarn dev"
 
 # Functions
 unalias gpu

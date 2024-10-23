@@ -118,7 +118,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 source $HOME/.dd_aliases
 
-PATH=~/.console-ninja/.bin:$PATH
+
 
 PKG_CONFIG_PATH=/opt/homebrew/opt/openssl@3.3/lib/pkgconfig
 
