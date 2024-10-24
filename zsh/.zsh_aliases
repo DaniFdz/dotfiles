@@ -29,6 +29,7 @@ alias p=pnpm
 alias px=pnpx
 alias y=yarn
 alias yyd="yarn && yarn dev"
+alias cdr='cd $(git rev-parse --show-toplevel)'
 
 # Functions
 unalias gpu
