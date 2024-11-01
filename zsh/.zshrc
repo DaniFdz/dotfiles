@@ -152,6 +152,7 @@ bindkey "\e[3~" delete-char
 bindkey "\e[H"  beginning-of-line
 bindkey "\e[F"  end-of-line
 bindkey -s ^f "tmux-sessionizer.sh\n"
+bindkey -s ^g "gt checkout\n"
 
 export EDITOR="nvim"
 export PATH=$PATH:$HOME/.cargo/bin

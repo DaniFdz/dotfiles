@@ -11,3 +11,21 @@ map(
   ":OpenInGHFileLines <CR>",
   { desc = "Open in GitHub File Lines", silent = true, noremap = true }
 )
+
+function CopyRelativePath()
+  local relative_path = vim.fn.expand("%")
+  vim.fn.setreg("+", relative_path)
+  print("Copied relative path: " .. relative_path)
+end
+map(
+  { "n" },
+  "<leader>yr",
+  ":lua CopyRelativePath()<CR>",
+  { desc = "Copy relative path", silent = true, noremap = true }
+)
+function CopyFullPath()
+  local full_path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", full_path)
+  print("Copied full path: " .. full_path)
+end
+map({ "n" }, "<leader>yp", ":lua CopyFullPath()<CR>", { desc = "Copy full pathh", silent = true, noremap = true })
