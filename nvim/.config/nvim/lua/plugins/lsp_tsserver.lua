@@ -2,8 +2,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      -- make sure mason installs the server
+      inlay_hints = {
+        enabled = false,
+      },
+      codelens = {
+        enabled = false,
+      },
 
+      -- make sure mason installs the server
       servers = {
         --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
         --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
@@ -62,21 +68,12 @@ return {
               suggest = {
                 completeFunctionCalls = true,
               },
-              inlayHints = {
-                enumMemberValues = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-                parameterNames = { enabled = "literals" },
-                parameterTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
-                variableTypes = { enabled = false },
-              },
             },
             javascript = {
               format = {
                 enable = false,
               },
             },
-
           },
           keys = {
             {
@@ -101,7 +98,6 @@ return {
                   command = "typescript.findAllFileReferences",
                   arguments = { vim.uri_from_bufnr(0) },
                   open = true,
-
                 })
               end,
 
@@ -123,7 +119,6 @@ return {
               "<leader>cu",
               LazyVim.lsp.action["source.removeUnused.ts"],
               desc = "Remove unused imports",
-
             },
 
             {
@@ -136,7 +131,6 @@ return {
               "<leader>cV",
               function()
                 LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
-
               end,
               desc = "Select TS workspace version",
             },
@@ -168,7 +162,6 @@ return {
                 })
               end
 
-
               local fname = vim.uri_to_fname(uri)
               client.request("workspace/executeCommand", {
                 command = "typescript.tsserverRequest",
@@ -193,7 +186,6 @@ return {
                   format_item = function(f)
                     return vim.fn.fnamemodify(f, ":~:.")
                   end,
-
                 }, function(f)
                   if f and f:find("^Enter new path") then
                     vim.ui.input({
@@ -204,9 +196,7 @@ return {
                     }, function(newf)
                       return newf and move(newf)
                     end)
-
                   elseif f then
-
                     move(f)
                   end
                 end)
@@ -217,7 +207,6 @@ return {
           opts.settings.javascript =
             vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
         end,
-
       },
     },
   },
@@ -226,7 +215,6 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       table.insert(opts.ensure_installed, "js-debug-adapter")
-
     end,
   },
   {
@@ -256,7 +244,6 @@ return {
           opts.ensure_installed = opts.ensure_installed or {}
           table.insert(opts.ensure_installed, "js-debug-adapter")
         end,
-
       },
     },
     opts = function()
@@ -292,19 +279,15 @@ return {
             cb(nativeAdapter)
           end
         end
-
       end
 
       local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
-
 
       local vscode = require("dap.ext.vscode")
       vscode.type_to_filetypes["node"] = js_filetypes
       vscode.type_to_filetypes["pwa-node"] = js_filetypes
 
-
       for _, language in ipairs(js_filetypes) do
-
         if not dap.configurations[language] then
           dap.configurations[language] = {
             {
@@ -325,7 +308,6 @@ return {
           }
         end
       end
-
     end,
-  }
+  },
 }
