@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 sudo yabai --load-sa
 
-for i in {1..5}; do
+for i in {1..10}; do
 	space=$(yabai -m query --spaces --space "$i")
 	if [ -z "$space" ]; then
 		echo "Creating space $i"
@@ -16,23 +17,13 @@ yabai -m space 2 --label web
 yabai -m space 3 --label slack
 yabai -m space 5 --label media
 
-yabai -m rule --add app="^Chrome$" space=web manage=off
 yabai -m rule --add app="^Ghostty$" space=code
+yabai -m rule --add app="^Chrome$" space=web manage=off
 yabai -m rule --add app="^Slack$" space=slack
 yabai -m rule --add app="^Spotify$" space=media
 yabai -m rule --add app="^WhatsApp$" space=media
 yabai -m rule --add app="^Element$" space=media
-yabai -m rule --add app="^(Docker Desktop|System Settings|Activity Monitor|Installer|Finder)$" manage=off
-yabai -m rule --add app="^IINA$" manage=off sticky=on grid=8:8:6:0:2:2
-
-yabai -m signal --add event=window_created app="^Ghostty$" action="yabai -m window --focus $YABAI_WINDOW_ID"
-# Ensure focus stays in code space when new Ghostty windows appear
-yabai -m signal --add event=window_created app="^Ghostty$" \
-	action="yabai -m space --focus code"
-
-yabai -m signal --add event=window_created app="^Google Chrome$" action="yabai -m window --focus $YABAI_WINDOW_ID"
-yabai -m signal --add event=window_created app="^Google Chrome$" \
-	action="yabai -m space --focus web"
+yabai -m rule --add app="^(Docker Desktop|System Settings|Activity Monitor|Installer|Finder|CleanShot X)$" manage=off
 
 borders "active_color=gradient(top_left=0xff9ccfd8,bottom_right=0xff31748f) inactive_color=0xff6e6a86 width=5.0 &"
 
