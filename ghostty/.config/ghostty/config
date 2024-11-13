@@ -20,51 +20,27 @@ cursor-style-blink = true
 keybind=ctrl+left=esc:b
 keybind=ctrl+right=esc:f
 
-## name: Rosé Pine
-## author: mvllow
-## license: MIT
-## upstream: https://github.com/rose-pine/kitty/blob/main/dist/rose-pine.conf
-## blurb: All natural pine, faux fur and a bit of soho vibes for the classy minimalist
-
-foreground = #e0def4
-background = #191724
-selection-foreground = #e0def4
-selection-background = #403d52
-
-cursor-color =#524f67
-cursor-text = #e0def4
-
-# black
-palette = 0=#26233a
-palette = 8=#6e6a86
-
-# red
-palette = 1=#eb6f92
-palette = 9=#eb6f92
-
-# green
-palette = 2=#31748f
-palette = 10=#31748f
-
-# yellow
-palette = 3=#f6c177
-palette = 11=#f6c177
-
-# blue
-palette = 4=#9ccfd8
-palette = 12=#9ccfd8
-
-# magenta
-palette = 5=#c4a7e7
-palette = 13=#c4a7e7
-
-# cyan
-palette = 6=#ebbcba
-palette = 14=#ebbcba
-
-# white
-palette = 7=#e0def4
-palette = 15=#e0def4
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#bac2de
+palette = 8=#585b70
+palette = 9=#f38ba8
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89b4fa
+palette = 13=#f5c2e7
+palette = 14=#94e2d5
+palette = 15=#a6adc8
+background = 1e1e2e
+foreground = cdd6f4
+cursor-color = f5e0dc
+selection-background = 353749
+selection-foreground = cdd6f4
 
 mouse-scroll-multiplier = 5
 
@@ -84,7 +60,7 @@ confirm-close-surface = false
 
 quit-after-last-window-closed = true
 
-window-save-state = always
+window-save-state = never
 
 # mouse-hide-while-typing = true
 
