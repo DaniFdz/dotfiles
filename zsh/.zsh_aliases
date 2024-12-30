@@ -46,3 +46,9 @@ function openpr() {
     local BRANCH=$(git rev-parse --abbrev-ref HEAD)
     open https://github.com/DataDog/web-ui/compare/preprod...$BRANCH
 }
+
+function yh() {
+  HASH=$(yarn hash | grep "HASH:" | awk '{print $NF}' | head -n 1)
+  echo $HASH | pbcopy
+  echo $HASH
+}
