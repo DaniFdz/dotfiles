@@ -49,6 +49,6 @@ function openpr() {
 
 function yh() {
   HASH=$(yarn hash | grep "HASH:" | awk '{print $NF}' | head -n 1)
-  echo $HASH | pbcopy
+  echo -n $HASH | pbcopy
   echo $HASH
 }
