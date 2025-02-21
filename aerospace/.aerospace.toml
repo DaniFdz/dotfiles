@@ -11,6 +11,13 @@ after-login-command = []
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
   'exec-and-forget borders active_color=gradient0xea76cb inactive_color=0xff6e6a86 width=5.0',
+  'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
+]
+
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
 ]
 
 # Start AeroSpace at login
@@ -188,17 +195,17 @@ if.app-id = 'com.figma.Desktop'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-if.app-id = 'us.zoom.xos'
+if.app-name-regex-substring = 'zoom'
 run = 'move-node-to-workspace 0'
 
 [workspace-to-monitor-force-assignment]
-1Terminal = 'secondary' # Non-main monitor in case when there are only two monitors'
-2Browser = 'secondary'
-3Slack = 'main'         # "Main" monitor ("main" as in System Settings → Displays → Use as)
-4Media = 'secondary'
-5 = 'secondary'
-6 = 'secondary'
-7 = 'secondary'
-8 = 'secondary'
-9 = 'secondary'
-0 = 'main'
+1Terminal = 2
+2Browser = [3, 2]
+3Slack = 1
+4Media = 2
+5 = 2
+6 = 2
+7 = [3, 2]
+8 = [3, 2]
+9 = 1
+0 = 1

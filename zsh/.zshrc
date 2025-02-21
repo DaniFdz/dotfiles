@@ -18,7 +18,6 @@ plugins=(
 	aliases
 	bazel
 	brew
-    direnv
 	docker
 	fzf
 	git

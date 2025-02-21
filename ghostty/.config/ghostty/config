@@ -1,12 +1,12 @@
 unfocused-split-opacity = 1
 
-font-family = MesloLGS Nerd Font Mono
+font-family = TX-02
 
 shell-integration-features = cursor,sudo,title
 
-# font-family-bold = MesloLGS Nerd Font Mono
-# font-family-italic = MesloLGS Nerd Font Mono
-# font-family-bold-italic = MesloLGS Nerd Font Mono
+# font-family-bold = TX-02
+# font-family-italic = TX-02
+# font-family-bold-italic = TX-02
 
 font-size = 12
 font-thicken = true

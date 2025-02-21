@@ -27,3 +27,11 @@
 
 [diff]
     colorMoved = default
+[safe]
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
+	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source/.git
