@@ -1,4 +1,10 @@
 return {
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
   "wakatime/vim-wakatime",
   {
     "yamatsum/nvim-cursorline",
