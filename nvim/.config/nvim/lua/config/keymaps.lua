@@ -29,3 +29,22 @@ function CopyFullPath()
   print("Copied full path: " .. full_path)
 end
 map({ "n" }, "<leader>yp", ":lua CopyFullPath()<CR>", { desc = "Copy full pathh", silent = true, noremap = true })
+
+map(
+  { "n", "v" },
+  "<leader>a",
+  "<cmd>CodeCompanionActions<CR>",
+  { desc = "Open the action palette", silent = true, noremap = true }
+)
+map(
+  { "n", "v" },
+  "<leader>ct",
+  "<cmd>CodeCompanionChat Toggle<CR>",
+  { desc = "Toggle a chat buffer", silent = true, noremap = true }
+)
+map(
+  { "n", "v" },
+  "ga",
+  "<cmd>CodeCompanionChat Add<CR>",
+  { desc = "Add selected text to a chat buffer", silent = true, noremap = true }
+)

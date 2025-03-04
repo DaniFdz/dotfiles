@@ -1,4 +1,134 @@
 return {
+  "tpope/vim-sleuth", -- Automatically detects which indents should be used in the current buffer
+  {
+    "olimorris/codecompanion.nvim", -- The KING of AI programming
+    dependencies = {
+      "j-hui/fidget.nvim",
+      -- { "echasnovski/mini.pick", config = true },
+      -- { "ibhagwan/fzf-lua", config = true },
+    },
+    config = function()
+      require("codecompanion").setup({
+        adapters = {
+          ollama = require("codecompanion.adapters").extend("ollama", {
+            schema = {
+              num_ctx = {
+                default = 20000,
+              },
+            },
+          }),
+          openai = require("codecompanion.adapters").extend("openai", {
+            env = {
+              api_key = "cmd:op read  'op://Employee/OPENAI_API_KEY/password' --no-newline",
+            },
+            schema = {
+              model = {
+                default = function()
+                  return "gpt-4o"
+                end,
+              },
+            },
+          }),
+        },
+        prompt_library = {
+          ["Test workflow"] = {
+            strategy = "workflow",
+            description = "Use a workflow to test the plugin",
+            opts = {
+              index = 4,
+            },
+            prompts = {
+              {
+                {
+                  role = "user",
+                  content = "Write unit tests for the library class you just created",
+                  opts = {
+                    auto_submit = true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        strategies = {
+          chat = {
+            adapter = "openai",
+            roles = {
+              user = "olimorris",
+            },
+            keymaps = {
+              send = {
+                modes = {
+                  i = { "<C-CR>", "<C-s>" },
+                },
+              },
+              completion = {
+                modes = {
+                  i = "<C-x>",
+                },
+              },
+            },
+            slash_commands = {
+              ["buffer"] = {
+                opts = {
+                  provider = "snacks",
+                  keymaps = {
+                    modes = {
+                      i = "<C-b>",
+                    },
+                  },
+                },
+              },
+              ["help"] = {
+                opts = {
+                  provider = "snacks",
+                  max_lines = 1000,
+                },
+              },
+              ["file"] = {
+                opts = {
+                  provider = "snacks",
+                },
+              },
+              ["symbols"] = {
+                opts = {
+                  provider = "snacks",
+                },
+              },
+            },
+            variables = {
+              ["my_var"] = {
+                callback = function()
+                  return "Your custom content here."
+                end,
+                description = "Explain what my_var does",
+                opts = {
+                  contains_code = false,
+                },
+              },
+            },
+          },
+          inline = { adapter = "copilot" },
+        },
+        display = {
+          action_palette = {
+            provider = "default",
+          },
+          chat = {
+            -- show_references = true,
+            -- show_header_separator = false,
+            -- show_settings = false,
+          },
+          diff = {
+            provider = "mini_diff",
+          },
+        },
+        opts = {
+          log_level = "DEBUG",
+        },
+      })
+    end,
+  },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -199,5 +329,17 @@ return {
     -- has to be loaded on startup. Otherwise, the interactive feature of the `Subs` will only be
     -- available after the first executing of it or after a keymap of text-case.nvim has been used.
     lazy = false,
+  },
+  "almo7aya/openingh.nvim",
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
+  {
+    "OlegGulevskyy/better-ts-errors.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    config = {
+      keymaps = {
+        toggle = "<leader>dd",
+        go_to_definition = "<leader>dx",
+      },
+    },
   },
 }

@@ -51,20 +51,6 @@ return {
       vim.g.blamer_enabled = true
     end,
   },
-  { "akinsho/git-conflict.nvim", version = "*", config = true },
-  {
-    "almo7aya/openingh.nvim",
-  },
-  {
-    "OlegGulevskyy/better-ts-errors.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    config = {
-      keymaps = {
-        toggle = "<leader>dd",
-        go_to_definition = "<leader>dx",
-      },
-    },
-  },
   {
     "nacro90/numb.nvim",
     event = "CmdlineEnter",

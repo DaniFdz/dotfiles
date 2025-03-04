@@ -19,7 +19,7 @@ return {
 
 
     ]]
-    dashboard.section.header.val = vim.split(logo, '\n')
+    dashboard.section.header.val = vim.split(logo, "\n")
   --   local logo = {
   --       "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠋⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠈⠉⠉⠙⠛⠛⠻⢿⣿⡿⠟⠁⠀⣀⣴⣿⣿⣿⣿⣿⠟",
   --       "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⣉⣡⠀⣠⣴⣶⣶⣦⠄⣀⡀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⡿⢃⣾",
@@ -49,7 +49,6 @@ return {
       dashboard.button("n", " " .. " New file",        [[<cmd> ene <BAR> startinsert <cr>]]),
       dashboard.button("r", " " .. " Recent files",    LazyVim.pick("oldfiles")),
       dashboard.button("g", " " .. " Find text",       LazyVim.pick("live_grep")),
-
       dashboard.button("c", " " .. " Config",          LazyVim.pick.config_files()),
       dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
       dashboard.button("x", " " .. " Lazy Extras",     "<cmd> LazyExtras <cr>"),
@@ -92,13 +91,7 @@ return {
         local stats = require("lazy").stats()
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
         dashboard.section.footer.val = "⚡ Neovim loaded "
-
-          .. stats.loaded
-          .. "/"
-          .. stats.count
-          .. " plugins in "
-          .. ms
-          .. "ms"
+ .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms"
         pcall(vim.cmd.AlphaRedraw)
       end,
     })
