@@ -57,7 +57,7 @@ return {
                   excludeDirectories = { "**/node_modules", "**/.yarn" },
                 },
               },
-              tsdk = ".yarn/sdks/typescript/lib",
+              tsdk = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") == "web-ui" and ".yarn/sdks/typescript/lib" or nil,
               files = {
                 maxMemoryForLargeFilesMB = 12288,
               },

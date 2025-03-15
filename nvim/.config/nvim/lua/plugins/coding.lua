@@ -4,8 +4,8 @@ return {
     "olimorris/codecompanion.nvim", -- The KING of AI programming
     dependencies = {
       "j-hui/fidget.nvim",
-      -- { "echasnovski/mini.pick", config = true },
-      -- { "ibhagwan/fzf-lua", config = true },
+      { "echasnovski/mini.pick", config = true },
+      { "ibhagwan/fzf-lua", config = true },
     },
     config = function()
       require("codecompanion").setup({
@@ -19,7 +19,7 @@ return {
           }),
           openai = require("codecompanion.adapters").extend("openai", {
             env = {
-              api_key = "cmd:op read  'op://Employee/OPENAI_API_KEY/password' --no-newline",
+              api_key = 'cmd:[ -n "$OPENAI_API_KEY" ] && echo -n "$OPENAI_API_KEY" || op read "op://Private/OPENAI_API_KEY/password" --no-newline',
             },
             schema = {
               model = {
