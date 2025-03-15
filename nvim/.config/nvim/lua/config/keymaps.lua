@@ -37,8 +37,8 @@ map(
   { desc = "Open the action palette", silent = true, noremap = true }
 )
 map(
-  { "n", "v" },
-  "<leader>ct",
+  { "i", "n", "v" },
+  "<c-g>",
   "<cmd>CodeCompanionChat Toggle<CR>",
   { desc = "Toggle a chat buffer", silent = true, noremap = true }
 )

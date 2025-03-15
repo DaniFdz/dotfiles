@@ -53,3 +53,7 @@ function yh() {
   echo -n $HASH | pbcopy
   echo $YH
 }
+
+function this_branch {
+    git branch | awk '/^\* / { print $2 }'
+}

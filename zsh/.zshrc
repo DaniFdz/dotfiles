@@ -156,6 +156,7 @@ bindkey -s ^g "gt checkout\n"
 export EDITOR="nvim"
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.config/scripts
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
