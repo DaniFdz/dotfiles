@@ -199,10 +199,10 @@ if.app-name-regex-substring = 'zoom'
 run = 'move-node-to-workspace 0'
 
 [workspace-to-monitor-force-assignment]
-1Terminal = 2
-2Browser = [3, 2]
+1Terminal = [3, 2]
+2Browser = 2
 3Slack = 1
-4Media = 2
+4Media = [3, 2]
 5 = 2
 6 = 2
 7 = [3, 2]
