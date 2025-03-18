@@ -19,7 +19,7 @@ return {
           }),
           openai = require("codecompanion.adapters").extend("openai", {
             env = {
-              api_key = 'cmd:[ -n "$OPENAI_API_KEY" ] && echo -n "$OPENAI_API_KEY" || op read "op://Private/OPENAI_API_KEY/password" --no-newline',
+              api_key = 'cmd:[ -n "$OPENAI_API_KEY" ] && echo -n "$OPENAI_API_KEY" || OP_ACCOUNT=my.1password.com op read "op://Private/OPENAI_API_KEY/password" --no-newline',
             },
             schema = {
               model = {
