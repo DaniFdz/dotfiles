@@ -43,8 +43,15 @@ map(
   { desc = "Toggle a chat buffer", silent = true, noremap = true }
 )
 map(
-  { "n", "v" },
+  { "n" },
   "ga",
   "<cmd>CodeCompanionChat Add<CR>",
+  { desc = "Add selected text to a chat buffer", silent = true, noremap = true }
+)
+
+map(
+  { "v" },
+  "ga",
+  "<cmd>'<,'>CodeCompanionChat Add<CR>",
   { desc = "Add selected text to a chat buffer", silent = true, noremap = true }
 )
