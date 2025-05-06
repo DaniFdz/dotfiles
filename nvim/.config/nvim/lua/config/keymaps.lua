@@ -30,12 +30,12 @@ function CopyFullPath()
 end
 map({ "n" }, "<leader>yp", ":lua CopyFullPath()<CR>", { desc = "Copy full pathh", silent = true, noremap = true })
 
-map(
-  { "n", "v" },
-  "<leader>a",
-  "<cmd>CodeCompanionActions<CR>",
-  { desc = "Open the action palette", silent = true, noremap = true }
-)
+-- map(
+--   { "n", "v" },
+--   "<leader>a",
+--   "<cmd>CodeCompanionActions<CR>",
+--   { desc = "Open the action palette", silent = true, noremap = true }
+-- )
 map(
   { "i", "n", "v" },
   "<c-g>",
