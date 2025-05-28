@@ -150,7 +150,7 @@ bindkey "\e[3;5~" kill-word
 bindkey "\e[3~" delete-char
 bindkey "\e[H"  beginning-of-line
 bindkey "\e[F"  end-of-line
-bindkey -s ^f "tmux-sessionizer.sh\n"
+bindkey -s ^f "source tmux-sessionizer.sh\n"
 bindkey -s ^g "gt checkout\n"
 
 export EDITOR="nvim"

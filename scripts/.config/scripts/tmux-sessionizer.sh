@@ -7,12 +7,12 @@ else
 fi
 
 if [[ -z $selected ]]; then
-	exit 0
+	return 0
 fi
 
 if [ -n "$TMUX" ]; then
-	cd $selected || exit 1
-	exit 0
+	cd $selected || return 1
+	return 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
@@ -20,11 +20,12 @@ tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
 	tmux new-session -s $selected_name -c $selected
-	exit 0
+	return 0
 fi
 
 if tmux has-session -t=$selected_name 2>/dev/null; then
 	tmux attach-session -t $selected_name
+	return 0
 fi
 
 tmux new-session -ds $selected_name -c $selected

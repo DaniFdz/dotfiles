@@ -55,3 +55,7 @@ map(
   "<cmd>'<,'>CodeCompanionChat Add<CR>",
   { desc = "Add selected text to a chat buffer", silent = true, noremap = true }
 )
+
+map({ "n" }, "<leader>td", function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle diagnostics", silent = true, noremap = true })
