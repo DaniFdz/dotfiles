@@ -185,3 +185,5 @@
 	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-go/.git
 	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-go/.git
 	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-go/.git
+[include]
+	path = /Users/dani.fernandez/.config/gitsign/gitconfig

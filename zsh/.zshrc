@@ -100,7 +100,6 @@ export GOPROXY=binaries.ddbuild.io,https://proxy.golang.org,direct
 export GONOSUMDB=github.com/DataDog,go.ddbuild.io
 # END ANSIBLE MANAGED BLOCK
 export GITLAB_TOKEN=$(security find-generic-password -a ${USER} -s gitlab_token -w)
-export GITHUB_TOKEN=$(security find-generic-password -a ${USER} -s github_token -w)
 
 # Update with your preference
 export DATADOG_ROOT=~/dd
@@ -172,3 +171,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+eval "$(dd-gitsign load-key)"
+
+# opencode
+export PATH=/Users/dani.fernandez/.opencode/bin:$PATH
