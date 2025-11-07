@@ -22,6 +22,23 @@
 		line-numbers = true
 		side-by-side = true
 
+[alias]
+	review = "!f() { \
+              if [ $# -eq 0 ]; then \
+                  echo 'git review expects one argument (a branch name)'; \
+                  exit 1; \
+              else \
+                  if git show-ref --verify --quiet \"refs/heads/$1\"; then \
+                      git fetch origin \"$1\" && \
+                      git checkout \"$1\" && \
+                      git merge --ff-only \"origin/$1\"; \
+                  else \
+                      git fetch origin \"$1:$1\" && \
+                      git checkout \"$1\"; \
+                  fi; \
+              fi; \
+          }; f"
+
 [merge]
     conflictstyle = diff3
 
@@ -187,3 +204,5 @@
 	directory = /Users/dani.fernandez/go/src/github.com/DataDog/dd-go/.git
 [include]
 	path = /Users/dani.fernandez/.config/gitsign/gitconfig
+[maintenance]
+	repo = /Users/dani.fernandez/go/src/github.com/DataDog/dd-source

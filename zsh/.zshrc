@@ -175,3 +175,6 @@ eval "$(dd-gitsign load-key)"
 
 # opencode
 export PATH=/Users/dani.fernandez/.opencode/bin:$PATH
+
+# Added by Yarn Switch
+source "/Users/dani.fernandez/.yarn/switch/env"

@@ -15,7 +15,6 @@ alias py=python3
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
-alias gl="git pull"
 alias gr="git restore"
 alias gcl="git clone"
 alias pdw=pwd
@@ -30,6 +29,8 @@ alias px=pnpx
 alias y=yarn
 alias yyd="yarn && yarn dev"
 alias cdr='cd $(git rev-parse --show-toplevel)'
+alias k='kubectl'
+alias o='opencode'
 
 # Functions
 unalias gpu
@@ -54,6 +55,11 @@ function yh() {
   echo $YH
 }
 
-function this_branch {
-    git branch | awk '/^\* / { print $2 }'
+function this_branch() {
+    git branch --show-current
+}
+
+unalias gl
+function gl() {
+    git pull origin $(git branch --show-current)
 }
