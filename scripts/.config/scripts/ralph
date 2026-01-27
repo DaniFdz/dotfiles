@@ -1,0 +1,200 @@
+#!/bin/bash
+
+# Ralph Loop - Automated AI Iteration Script
+# Runs Claude (default) or OpenCode iteratively with a prompt and plan, committing after each iteration
+
+# Parse arguments
+USE_OPENCODE=false
+MAX_ITERATIONS=0
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            echo "Usage: ralph [options] [max-iterations]"
+            echo ""
+            echo "Options:"
+            echo "  --opencode          Use OpenCode instead of Claude"
+            echo "  -h, --help          Show this help message"
+            echo ""
+            echo "Arguments:"
+            echo "  max-iterations      Maximum number of iterations (default: 0 = unlimited, runs until DONE)"
+            echo ""
+            echo "Examples:"
+            echo "  ralph               # Run unlimited iterations with Claude until DONE"
+            echo "  ralph 50            # Run with 50 iteration limit using Claude"
+            echo "  ralph --opencode    # Run with OpenCode instead of Claude"
+            echo "  ralph --opencode 50 # Run with OpenCode and 50 iteration limit"
+            exit 0
+            ;;
+        --opencode)
+            USE_OPENCODE=true
+            shift
+            ;;
+        *)
+            if [[ $1 =~ ^[0-9]+$ ]]; then
+                MAX_ITERATIONS=$1
+            else
+                echo "Error: Invalid argument '$1'"
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+ITERATION=0
+BRANCH_NAME=$(git branch --show-current)
+WORKTREE_DIR=$(pwd)
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+if [ "$USE_OPENCODE" = true ]; then
+    echo "Ralph Loop - Automated OpenCode Iterations"
+else
+    echo "Ralph Loop - Automated Claude Iterations"
+fi
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Branch: $BRANCH_NAME"
+[ $MAX_ITERATIONS -gt 0 ] && echo "Max:    $MAX_ITERATIONS iterations"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Verify required files exist
+if [ ! -f "plan.md" ]; then
+    echo "Error: plan.md not found in current directory."
+    echo "Run 'ralph-templates' to generate template files first."
+    exit 1
+fi
+
+while true; do
+    # Check if migration log indicates completion
+    if [ -f "migration-log.md" ]; then
+        LAST_LINE=$(tail -n 1 migration-log.md | tr -d '[:space:]')
+        if [ "$LAST_LINE" = "DONE" ]; then
+            echo ""
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "Migration marked as DONE in migration-log.md"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            break
+        fi
+    fi
+
+    if [ $MAX_ITERATIONS -gt 0 ] && [ $ITERATION -ge $MAX_ITERATIONS ]; then
+        echo "Reached max iterations: $MAX_ITERATIONS"
+        break
+    fi
+
+    ITERATION=$((ITERATION + 1))
+    echo -e "\n\n======================== ITERATION $ITERATION ========================\n"
+
+    # Run iteration with prompt
+    if [ "$USE_OPENCODE" = true ]; then
+        # OpenCode mode
+        # --model: Use Opus 4.5 for complex reasoning and problem-solving
+        # --format json: Structured JSON output for logging/monitoring
+        # --agent ralph: Use ralph agent which allows all permissions and denies questions (headless mode)
+        cat << 'EOPROMPT' | opencode run --model anthropic/claude-opus-4-5 --format json --agent ralph
+# Ralph Loop Task
+
+Please implement the plan detailed in `plan.md`.
+
+## Instructions
+1. Read and understand the `plan.md` file completely before starting
+2. Check if `migration-log.md` exists and review any previous findings
+3. Follow all guidelines and principles outlined in the plan
+4. Work incrementally, committing after each successful component/feature
+5. Keep the migration log updated with your findings
+6. **When ALL work is complete and tested**, append a new line with only the word `DONE` to `migration-log.md` to signal completion
+
+## Key Reminders
+- No stubs or TODOs
+- Commit only working, tested code
+- Document API changes and gotchas in the migration log
+- Write `DONE` as the last line of migration-log.md when all work is complete to stop the Ralph loop
+- **NEVER commit or upload plan.md or migration-log.md files** - these are Ralph Loop meta-files, not project code
+EOPROMPT
+    else
+        # Claude mode (default)
+        # -p: Headless mode (non-interactive, reads from stdin)
+        # --dangerously-skip-permissions: Auto-approve all tool calls
+        # --output-format=stream-json: Structured output for logging/monitoring
+        # --model opus: Use Opus for complex reasoning and problem-solving
+        # --verbose: Detailed execution logging
+        cat << 'EOPROMPT' | claude -p \
+            --dangerously-skip-permissions \
+            --output-format=stream-json \
+            --model opus \
+            --verbose
+# Ralph Loop Task
+
+Please implement the plan detailed in `plan.md`.
+
+## Instructions
+1. Read and understand the `plan.md` file completely before starting
+2. Check if `migration-log.md` exists and review any previous findings
+3. Follow all guidelines and principles outlined in the plan
+4. Work incrementally, committing after each successful component/feature
+5. Keep the migration log updated with your findings
+6. **When ALL work is complete and tested**, append a new line with only the word `DONE` to `migration-log.md` to signal completion
+
+## Key Reminders
+- No stubs or TODOs
+- Commit only working, tested code
+- Document API changes and gotchas in the migration log
+- Write `DONE` as the last line of migration-log.md when all work is complete to stop the Ralph loop
+- **NEVER commit or upload plan.md or migration-log.md files** - these are Ralph Loop meta-files, not project code
+EOPROMPT
+    fi
+done
+
+BRANCH_NAME=$(git branch --show-current)
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Ralph loop complete!"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Branch: $BRANCH_NAME"
+echo ""
+echo "Creating draft pull request..."
+
+# Create PR analyzing the changes
+if [ "$USE_OPENCODE" = true ]; then
+    cat << 'EOPR' | opencode run --model anthropic/claude-opus-4-5 --agent ralph
+Review the git history and changes on this branch, then create a draft pull request with a comprehensive description.
+
+Instructions:
+1. Review all commits on this branch (git log with comparison to base branch)
+2. Analyze the overall changes (git diff against base branch)
+3. Read migration-log.md if it exists for context
+4. Create a draft PR with:
+   - Clear title summarizing the work
+   - Detailed description covering what was changed and why
+   - Any testing notes or important details from migration-log.md
+5. Use `gh pr create --draft` to create the pull request
+
+Make sure the PR description is comprehensive and helpful for reviewers.
+EOPR
+else
+    cat << 'EOPR' | claude -p --dangerously-skip-permissions --verbose
+Review the git history and changes on this branch, then create a draft pull request with a comprehensive description.
+
+Instructions:
+1. Review all commits on this branch (git log with comparison to base branch)
+2. Analyze the overall changes (git diff against base branch)
+3. Read migration-log.md if it exists for context
+4. Create a draft PR with:
+   - Clear title summarizing the work
+   - Detailed description covering what was changed and why
+   - Any testing notes or important details from migration-log.md
+5. Use `gh pr create --draft` to create the pull request
+
+Make sure the PR description is comprehensive and helpful for reviewers.
+EOPR
+fi
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Ralph's work is ready for review!"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Send notification (macOS)
+osascript -e "display notification \"Ralph's work on branch '$BRANCH_NAME' is ready for review\" with title \"Ralph Loop Complete\" sound name \"Glass\""

@@ -31,6 +31,7 @@ alias yyd="yarn && yarn dev"
 alias cdr='cd $(git rev-parse --show-toplevel)'
 alias k='kubectl'
 alias o='opencode'
+alias c="claude --dangerously-skip-permissions"
 
 # Functions
 unalias gpu

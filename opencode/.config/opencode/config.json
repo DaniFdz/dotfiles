@@ -4,14 +4,20 @@
   "autoshare": false,
   "autoupdate": false,
   "instructions": [],
+  "permission": {
+    "edit": "allow",
+    "bash": "allow",
+    "doom_loop": "allow",
+    "external_directory": "allow"
+  },
   "mcp": {
     "atlassian": {
-      "enabled": false,
+      "enabled": true,
       "type": "local",
       "command": ["npx", "-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
     },
     "github": {
-      "enabled": false,
+      "enabled": true,
       "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {

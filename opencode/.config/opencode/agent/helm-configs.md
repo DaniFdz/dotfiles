@@ -6,8 +6,8 @@ tools:
   edit: true
   bash: true
 permission:
-  edit: ask
-  write: ask
+  edit: allow
+  write: allow
   bash: allow
 ---
 

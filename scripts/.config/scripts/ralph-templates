@@ -1,0 +1,138 @@
+#!/bin/bash
+
+# Ralph Loop Templates Generator
+# Creates a git worktree with a plan.md template file
+
+# Parse arguments
+if [ $# -eq 0 ]; then
+    echo "Usage: ralph-templates <branch-name> [base-branch]"
+    echo ""
+    echo "Arguments:"
+    echo "  branch-name   Name of the branch to create (will be prefixed with \$USER/)"
+    echo "  base-branch   Base branch to branch from (default: current branch)"
+    echo ""
+    echo "Example:"
+    echo "  ralph-templates cheatbreaker-migration"
+    echo "  ralph-templates cheatbreaker-migration main"
+    exit 1
+fi
+
+BRANCH_NAME="$1"
+BASE_BRANCH="${2:-$(git branch --show-current)}"
+FULL_BRANCH_NAME="$USER/$BRANCH_NAME"
+WORKTREE_DIR="../$BRANCH_NAME"
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Creating Ralph Loop worktree"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Base branch:   $BASE_BRANCH"
+echo "Target branch: $FULL_BRANCH_NAME"
+echo "Worktree dir:  $WORKTREE_DIR"
+echo ""
+
+# Verify we're in a git repository
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+    echo "Error: Not in a git repository"
+    exit 1
+fi
+
+# Check if worktree directory already exists
+if [ -d "$WORKTREE_DIR" ]; then
+    echo "Error: Directory '$WORKTREE_DIR' already exists"
+    exit 1
+fi
+
+# Create git worktree with new branch
+echo "Creating git worktree..."
+if ! git worktree add -b "$FULL_BRANCH_NAME" "$WORKTREE_DIR" "$BASE_BRANCH"; then
+    echo "Error: Failed to create worktree"
+    exit 1
+fi
+echo "✓ Created worktree at $WORKTREE_DIR"
+echo ""
+
+# Generate plan.md
+echo "Generating plan.md template..."
+cat > "$WORKTREE_DIR/plan.md" << 'EOF'
+## Context
+- **Source**: [Describe source codebase/version/framework]
+- **Target**: [Describe target codebase/version/framework]
+- **Differences**: [Key differences between source and target]
+
+## Goal
+[Clearly state the migration/porting objective]
+
+## Implementation Guidelines
+
+### General Principles
+1. **No Stubs**: Never create placeholder/stub implementations. All ported code must be fully functional.
+2. **No TODOs**: Don't leave TODO comments or incomplete implementations in the code.
+3. **Read-Only Source**: The source directory is READ-ONLY. Never modify, write to, or commit changes to it. Only read from it to understand the implementation.
+4. **Preserve Functionality**: Maintain exact behavior from source version - don't add, remove, or modify features unless explicitly required.
+5. **Incremental Migration**: Port one feature/system at a time, ensuring it builds and works before moving to the next.
+6. **Maintain Code Structure**: Keep the same package/module structure and class organization where possible.
+
+### Technical Approach
+1. **Initial Setup**: [Describe any initial setup steps needed - copying packages, configuring build, etc.]
+2. **Identify Custom Code**: [How to identify what needs to be migrated]
+3. **Port Feature by Feature**: For each identified component:
+   - Analyze the source implementation
+   - Port the code to target, adapting to API changes where strictly necessary
+   - Verify functionality
+4. **Handle API Changes**: When APIs changed between source and target:
+   - Find the equivalent class/method/function in target
+   - Adapt signatures and parameter types
+   - Update imports and references
+5. **Dependencies**: [How to handle dependency changes, if applicable]
+
+### Testing Requirements
+1. **Build Verification**: Ensure code compiles/builds without errors after each feature port.
+2. **Runtime Testing**: Document how each ported feature can be tested.
+3. **Feature Parity**: Verify ported features behave identically to source version.
+4. **[Add project-specific testing requirements]**
+
+### Version Control
+1. **Branch Strategy**: [Specify branch name and workflow]
+2. **Commit Iteratively**: After successfully porting and testing a feature, commit immediately with a descriptive message.
+3. **Atomic Commits**: Each commit should represent one complete, working feature or logical unit.
+4. **Never Commit Broken Code**: Only commit when the code builds and the ported feature works correctly.
+
+### Parallelization Strategy
+1. **Use Parallel Agents When Appropriate**: For independent features with no shared dependencies, spawn multiple subagents to work in parallel.
+2. **Be Conservative**: Only parallelize when features are truly independent. Avoid parallelizing if:
+   - Features share common code/utilities
+   - One feature's implementation might inform another
+   - Dependencies are unclear
+3. **Coordinate via Migration Log**: Parallel agents must actively read and update the migration log to avoid duplicate work and share findings.
+
+### Documentation
+1. **Migration Log**: Maintain a `migration-log.md` file documenting:
+   - API changes discovered (source → target equivalents)
+   - Common patterns for handling version differences
+   - Gotchas and important findings
+   - Completed features and their status
+   - **When ALL work is complete and tested**: Append `DONE` as the last line to signal Ralph loop completion
+2. **Share Knowledge**: Before starting work, read the migration log to learn from previous work.
+3. **Update Continuously**: Add relevant findings immediately so other agents can benefit.
+
+### When Blocked
+1. **API Removals**: If a source API was removed in target, research the replacement approach.
+2. **Major Refactors**: If the target refactored a system significantly, map old → new architecture.
+3. **Ask for Guidance**: If uncertain about the correct approach, document the issue and ask.
+
+## Project-Specific Notes
+[Add any project-specific guidelines, constraints, or requirements here]
+EOF
+echo "✓ Generated plan.md"
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "Worktree created successfully!"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+echo "Next steps:"
+echo "  1. Edit plan.md to define your task and implementation guidelines"
+echo "  2. Run 'ralph' to start the automated loop"
+echo ""
+echo "Entering worktree directory..."
+cd "$WORKTREE_DIR" && exec $SHELL

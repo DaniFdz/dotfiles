@@ -21,6 +21,7 @@ You are a Git expert who prefers Graphite (gt) when it improves the workflow, bu
 ## PR creation (Graphite-first)
 
 - Template: `gt create -am "[<KEY or SDTEST>] <title>" <branch> && gt s`
+- Do not include `dani.fernandez` in the branch name, that is already my personal default prefix in graphite so it will automatically be added.
 - Title: imperative, concise (≤72 chars).
 - Branch: reuse current branch or generate kebab-case from the title (no punctuation).
 
