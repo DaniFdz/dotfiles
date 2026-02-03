@@ -178,3 +178,6 @@ export PATH=/Users/dani.fernandez/.opencode/bin:$PATH
 
 # Added by Yarn Switch
 source "/Users/dani.fernandez/.yarn/switch/env"
+
+# Overwrite repos not allowing yolo mode
+export OPENCODE_CONFIG_CONTENT='{"permission":{"*":"allow","edit":"allow","bash":"allow","webfetch":"allow","doom_loop":"allow","external_directory":"allow"}}'
